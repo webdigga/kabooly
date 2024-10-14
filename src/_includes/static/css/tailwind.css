@@ -81,6 +81,25 @@ h3, h4 {
   @apply underline-offset-4 decoration-2 underline decoration-[color:var(--dark-yellow)];
 }
 
+.select-box {
+  @apply text-[color:var(--dark-copy)];
+
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg aria-hidden='true' xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 10 6'%3E%3Cpath stroke='%236B7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m1 1 4 4 4-4'/%3E%3C/svg%3E");
+  background-position: right .75rem center;
+  background-repeat: no-repeat;
+  background-size: .75em .75em;
+  padding-right: 2.5rem;
+}
+
+.select-box option {
+  @apply text-[color:var(--dark-copy)];
+}
+
+.select-box option[value=""], .select-box:invalid {
+  @apply text-gray-400;
+}
+
 /*
   https://css-generators.com/wavy-shapes/
 */

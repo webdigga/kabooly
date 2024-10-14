@@ -133,6 +133,23 @@
       </script>
     {% endif %}
 
+    {% if type === 'buyAWebsite' %}
+      <link rel="canonical" href="{{ env.site }}/buy-a-website/" />
+
+      <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "{{ seoTitle }}",
+          "description": "{{ description }}",
+          "image": "android-chrome-512x512.png",
+          "url": "{{ env.site }}",
+          "email": "{{ settings.email }}",
+          "telephone": "{{ settings.phoneNumber }}"
+        }
+      </script>
+    {% endif %}
+
     {% set css %}
       {% include "static/css/tailwind.css" %}
     {% endset %}

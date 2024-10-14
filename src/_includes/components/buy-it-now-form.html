@@ -1,7 +1,7 @@
-<div class="grid md:grid-cols-2 items-start gap-16 p-4 mx-auto">
+<div class="grid lg:grid-cols-2 items-start gap-16 p-4 mx-auto">
   <div>
-    <h2 class="dark-copy">Let's Talk</h2>
-    <p class="dark-copy mt-4">I'm excited to hear about your project! Whether you have a clear vision or need guidance in shaping your ideas, I'm here to help.</p>
+    <h2 class="dark-copy">Start Your Journey to a Professional Website Today!</h2>
+    <p class="dark-copy mt-4">Ready to elevate your online presence? Fill out the form to enquire about my professionally managed website services. I'm here to help you create a website that suits your business needs and drives success.</p>
 
     <div class="mt-4">
         <h3 class="dark-copy">Email</h3>
@@ -108,7 +108,7 @@
 
   <form
     class="ml-auto space-y-4"
-    name="contact"
+    name="buyitnow"
     method="POST"
     action="/thank-you/"
     netlify
@@ -126,6 +126,30 @@
       type='email'
       placeholder='Email'
       name="email"
+      class="w-full rounded-md py-3 px-4 bg-[color:var(--very-light-gray)] text-[color:var(--dark-copy)] text-sm outline-[color:var(--dark-blue)] focus:bg-transparent"
+    />
+
+    <select
+      required
+      name="packageType"
+      class="select-box rounded-lg block w-full py-3 px-4 outline-[color:var(--dark-blue)] focus:bg-transparent bg-[color:var(--very-light-gray)] text-sm">
+      <option value="">Standard or Pro package?</option>
+      <option value="Standard">Standard</option>
+      <option value="Pro">Pro</option>
+    </select>
+
+    <input
+      required
+      type='text'
+      placeholder='Nature of business e.g. Personal Trainer'
+      name="natureOfBusiness"
+      class="w-full rounded-md py-3 px-4 bg-[color:var(--very-light-gray)] text-[color:var(--dark-copy)] text-sm outline-[color:var(--dark-blue)] focus:bg-transparent"
+    />
+
+    <input
+      type='text'
+      placeholder="Preferred Project Completion Date (optional)"
+      name="date"
       class="w-full rounded-md py-3 px-4 bg-[color:var(--very-light-gray)] text-[color:var(--dark-copy)] text-sm outline-[color:var(--dark-blue)] focus:bg-transparent"
     />
 

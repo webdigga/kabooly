@@ -1,0 +1,49 @@
+---
+layout: default
+path: buy-a-website
+type: buyAWebsite
+ogType: website
+seoTitle: Buy a Website - Managed Website Solutions | Kabooly.com
+description: Get a professionally managed website for your business. Fill out our form to inquire about our website services at Kabooly.com and start today!
+---
+
+{% import "./_includes/partials/navbar.html" as navBar with context %}
+{% import "./_includes/components/buttons/more-button.html" as moreButton with context %}
+{% import "./_includes/components/faqs.html" as faqs with context %}
+
+<section class="min-h-dvh flex flex-col bg-[color:var(--dark-gray)] justify-between border-b-4 border-b-[color:var(--light-yellow)] border-solid">
+
+  {{ navBar.nav('bg-[color:var(--dark-gray)]') }}
+  
+  <div class="container content-center">
+    {% include "./_includes/components/hero-buy-it-now.html" %}
+  </div>
+
+  {{ moreButton.button('bg-[color:var(--light-yellow)]', 'border-[color:var(--light-yellow)]', 'text-[color:var(--dark-copy)]') }}
+</section>
+
+<section data-test="moreButtonLocation" id="contact">
+  <div class="container container--large">
+    {% include "./_includes/components/buy-it-now-form.html" %}
+  </div>
+</section>
+
+<section class="bg-[color:var(--dark-purple)]">
+  <div class="container container--large">
+    <div class="mb-4">
+      <h2 class="inline-block mb-0">About me.</h2>
+    </div>    
+
+    {% include "./_includes/components/about-me.html" %}
+    
+  </div>
+</section>
+
+<section>
+  <div class="container container--large">
+    <h2 class="mb-4 dark-copy">Frequently Asked Questions.</h2>
+
+    {{ faqs.faqComponent('dark-copy') }}
+    
+  </div>
+</section>
