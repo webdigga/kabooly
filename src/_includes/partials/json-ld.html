@@ -1,0 +1,35 @@
+{% macro schema() %}
+
+  {% if seoSchemaPageType == 'WebSite' %}
+
+    <!-- Website JSON ld -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "{{ seoTitle }}",
+        "description": "{{ description }}",
+        "image": "android-chrome-512x512.png",
+        "url": "{{ env.site }}"
+      }
+    </script>
+
+  {% else %}
+
+    <!-- Organisation JSON ld -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "{{ seoTitle }}",
+        "description": "{{ description }}",
+        "image": "android-chrome-512x512.png",
+        "url": "{{ env.site }}",
+        "email": "{{ settings.email }}",
+        "telephone": "{{ settings.phoneNumber }}"
+      }
+    </script>
+
+  {% endif %}
+
+{% endmacro %}

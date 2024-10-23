@@ -1,5 +1,8 @@
 ---
 layout: default
+seoSchemaPageType: Organization
+eleventyComputed:
+  canonical: "{{ env.site }}/{{ seoTitle | slugify }}/"
 ---
 
 {% import "./partials/navbar.html" as navBar with context %}
