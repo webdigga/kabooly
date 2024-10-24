@@ -105,7 +105,11 @@
             </svg>
           </div>
           <div class="ml-4">
-            <span class="text-sm font-medium">23 Carisbrooke House, Seven Kings Way, Kingston Upon Thames, KT2 5BS</span>
+            <address class="text-sm font-medium not-italic">
+              {{ settings.addressLineOne | safe }},
+              {{ settings.addressLineTwo | safe }},
+              {{ settings.addressLineThree | safe }},
+              {{ settings.postCode | safe }}</address>
           </div>
         </div>
       </div>

@@ -87,3 +87,8 @@ collections:
           - { label: Email, name: email, widget: string }
           - { label: Phone number, name: phoneNumber, widget: string }
           - { label: Company number, name: companyNumber, widget: string }
+          - { label: Address Line One, name: addressLineOne, widget: string }
+          - { label: Address Line Two, name: addressLineTwo, widget: string }
+          - { label: Address Line Three, name: addressLineThree, widget: string }
+          - { label: City, name: city, widget: string }
+          - { label: Post Code, name: postCode, widget: string }
