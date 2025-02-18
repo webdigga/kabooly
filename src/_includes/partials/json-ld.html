@@ -143,6 +143,8 @@
 
   {% elseif seoSchemaPageType == 'Product' %}
 
+    {# Product JSON ld #}
+
     {
       "@context": "https://schema.org/", 
       "@type": "Product", 
@@ -209,40 +211,47 @@
         "author": {"@type": "Person", "name": "Michael Carragher"},
         "publisher": {"@type": "Organization", "name": "Economics and Business Tutor"}
       }],
-      "publisher": {
-        "@context": "https://schema.org",
+      "seller": {
         "@type": "LocalBusiness",
         "name": "Kabooly",
-        "image": "{{ env.site }}/android-chrome-512x512.png",
-        "@id": "{{ env.site }}/android-chrome-512x512.png",
         "url": "{{ env.site }}",
-        "telephone": "{{ settings.phoneNumber }}",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "{{ settings.addressLineOne | safe }}",
-          "addressLocality": "{{ settings.addressLineThree | safe }}",
-          "addressRegion": "{{ settings.city | safe }}",
-          "postalCode": "{{ settings.postCode | safe }}",
-          "addressCountry": "{{ settings.country | safe }}"
-        },
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": 51.4139892,
-          "longitude": -0.303699
-        },
-        "openingHoursSpecification": {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": [
-            "Monday",
-            "Tuesday",
-            "Wednesday",
-            "Thursday",
-            "Friday"
-          ],
-          "opens": "09:00",
-          "closes": "17:00"
-        } 
+        "logo": "{{ env.site }}/android-chrome-512x512.png"
       }
+    }
+
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Kabooly",
+      "image": "{{ env.site }}/android-chrome-512x512.png",
+      "@id": "{{ env.site }}/android-chrome-512x512.png",
+      "url": "{{ env.site }}",
+      "telephone": "{{ settings.phoneNumber }}",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "{{ settings.addressLineOne | safe }}",
+        "addressLocality": "{{ settings.addressLineThree | safe }}",
+        "addressRegion": "{{ settings.city | safe }}",
+        "postalCode": "{{ settings.postCode | safe }}",
+        "addressCountry": "{{ settings.country | safe }}"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 51.4139892,
+        "longitude": -0.303699
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "09:00",
+        "closes": "17:00"
+      } 
     }
 
   {% else %}
