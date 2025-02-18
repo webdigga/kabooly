@@ -5,25 +5,40 @@
   {% if seoSchemaPageType == 'Organization' %}
 
     {# Organisation JSON ld #}
-      
+
     {
       "@context": "https://schema.org",
-      "@type": "Organization",
+      "@type": "LocalBusiness",
+      "name": "Kabooly",
       "image": "{{ env.site }}/android-chrome-512x512.png",
+      "@id": "{{ env.site }}/android-chrome-512x512.png",
       "url": "{{ env.site }}",
-      "logo": "{{ env.site }}/android-chrome-512x512.png",
-      "name": "{{ settings.siteName }}",
-      "description": "{{ description }}",
-      "email": "{{ settings.email }}",
       "telephone": "{{ settings.phoneNumber }}",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "{{ settings.addressLineOne | safe }} {{ settings.addressLineTwo | safe }}",
+        "streetAddress": "{{ settings.addressLineOne | safe }}",
         "addressLocality": "{{ settings.addressLineThree | safe }}",
-        "addressCountry": "{{ settings.country | safe }}",
         "addressRegion": "{{ settings.city | safe }}",
-        "postalCode": "{{ settings.postCode | safe }}"
-      }
+        "postalCode": "{{ settings.postCode | safe }}",
+        "addressCountry": "{{ settings.country | safe }}"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 51.4139892,
+        "longitude": -0.303699
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "09:00",
+        "closes": "17:00"
+      } 
     }
 
   {% elseif seoSchemaPageType == 'ContactPage' %}
@@ -38,23 +53,38 @@
         "@id": "{{ env.site }}/contact/"
       },
       "publisher": {
-        "@type": "Organization",
-        "@id": "{{ env.site }}",
-        "name": "{{ settings.siteName }}",
-        "logo": "{{ env.site }}/android-chrome-512x512.png",
-        "telephone": "{{ settings.phoneNumber }}",
-        "email": "{{ settings.email }}",
-        "url": "{{ env.site }}",
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Kabooly",
         "image": "{{ env.site }}/android-chrome-512x512.png",
-        "description": "{{ description }}",
+        "@id": "{{ env.site }}/android-chrome-512x512.png",
+        "url": "{{ env.site }}",
+        "telephone": "{{ settings.phoneNumber }}",
         "address": {
           "@type": "PostalAddress",
-          "streetAddress": "{{ settings.addressLineOne | safe }} {{ settings.addressLineTwo | safe }}",
+          "streetAddress": "{{ settings.addressLineOne | safe }}",
           "addressLocality": "{{ settings.addressLineThree | safe }}",
-          "addressCountry": "{{ settings.country | safe }}",
           "addressRegion": "{{ settings.city | safe }}",
-          "postalCode": "{{ settings.postCode | safe }}"
-        }
+          "postalCode": "{{ settings.postCode | safe }}",
+          "addressCountry": "{{ settings.country | safe }}"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 51.4139892,
+          "longitude": -0.303699
+        },
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "09:00",
+          "closes": "17:00"
+        } 
       }
     }
 
@@ -76,23 +106,38 @@
         }{{ "" if loop.last else "," }}{% endfor %}{% endif %}
       ],
       "publisher": {
-        "@type": "Organization",
-        "@id": "{{ env.site }}",
-        "name": "{{ settings.siteName }}",
-        "logo": "{{ env.site }}/android-chrome-512x512.png",
-        "telephone": "{{ settings.phoneNumber }}",
-        "email": "{{ settings.email }}",
-        "url": "{{ env.site }}",
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Kabooly",
         "image": "{{ env.site }}/android-chrome-512x512.png",
-        "description": "{{ description }}",
+        "@id": "{{ env.site }}/android-chrome-512x512.png",
+        "url": "{{ env.site }}",
+        "telephone": "{{ settings.phoneNumber }}",
         "address": {
           "@type": "PostalAddress",
-          "streetAddress": "{{ settings.addressLineOne | safe }} {{ settings.addressLineTwo | safe }}",
+          "streetAddress": "{{ settings.addressLineOne | safe }}",
           "addressLocality": "{{ settings.addressLineThree | safe }}",
-          "addressCountry": "{{ settings.country | safe }}",
           "addressRegion": "{{ settings.city | safe }}",
-          "postalCode": "{{ settings.postCode | safe }}"
-        }
+          "postalCode": "{{ settings.postCode | safe }}",
+          "addressCountry": "{{ settings.country | safe }}"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 51.4139892,
+          "longitude": -0.303699
+        },
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "09:00",
+          "closes": "17:00"
+        } 
       }
     }
 
@@ -102,30 +147,37 @@
 
     {
       "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "{{ seoTitle }}",
-      "description": "{{ description }}",
+      "@type": "LocalBusiness",
+      "name": "Kabooly",
       "image": "{{ env.site }}/android-chrome-512x512.png",
+      "@id": "{{ env.site }}/android-chrome-512x512.png",
       "url": "{{ env.site }}",
-      "publisher": {
-        "@type": "Organization",
-        "@id": "{{ env.site }}",
-        "name": "{{ settings.siteName }}",
-        "logo": "{{ env.site }}/android-chrome-512x512.png",
-        "telephone": "{{ settings.phoneNumber }}",
-        "email": "{{ settings.email }}",
-        "url": "{{ env.site }}",
-        "image": "{{ env.site }}/android-chrome-512x512.png",
-        "description": "{{ description }}",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "{{ settings.addressLineOne | safe }} {{ settings.addressLineTwo | safe }}",
-          "addressLocality": "{{ settings.addressLineThree | safe }}",
-          "addressCountry": "{{ settings.country | safe }}",
-          "addressRegion": "{{ settings.city | safe }}",
-          "postalCode": "{{ settings.postCode | safe }}"
-        }
-      }
+      "telephone": "{{ settings.phoneNumber }}",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "{{ settings.addressLineOne | safe }}",
+        "addressLocality": "{{ settings.addressLineThree | safe }}",
+        "addressRegion": "{{ settings.city | safe }}",
+        "postalCode": "{{ settings.postCode | safe }}",
+        "addressCountry": "{{ settings.country | safe }}"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 51.4139892,
+        "longitude": -0.303699
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "09:00",
+        "closes": "17:00"
+      } 
     }
 
   {% endif %}
