@@ -146,109 +146,71 @@
     {# Product JSON ld #}
 
     {
-      "@context": "https://schema.org/",
-      "@graph": [
-        {      
-          "@type": "Product", 
-          "name": "Managed Website Service",
-          "image": "",
-          "description": "Explore affordable web design packages at Kabooly. Custom solutions tailored to your needs, with clear pricing and no hidden fees.",
-          "brand": {
-            "@type": "Brand",
-            "name": "Standard"
-          },
-          "offers": {
-            "@type": "Offer",
-            "url": "",
-            "priceCurrency": "GBP",
-            "price": "50",
-            "availability": "https://schema.org/OnlineOnly",
-            "itemCondition": "https://schema.org/NewCondition"
-          },
-          "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "100",
-            "bestRating": "",
-            "worstRating": "",
-            "ratingCount": "3",
-            "reviewCount": "3"
-          },
-          "review": [{
-            "@type": "Review",
-            "name": "We are absolutely thrilled",
-            "reviewBody": "We are absolutely thrilled with the websites that David at Kabooly created for us! The entire process was seamless from start to finish. He took the time to understand our vision and translated it into performant, user-friendly sites that perfectly represents our brand. The site not only looks fantastic but also performs flawlessly. I highly recommend Kabooly for anyone looking to build or upgrade their website. He truly went above and beyond!",
-            "reviewRating": {
-              "@type": "Rating",
-              "ratingValue": "100",
-              "bestRating": "",
-              "worstRating": ""
-            },
-            "datePublished": "2024-05-15",
-            "author": {"@type": "Person", "name": "Jonny Rowse"},
-            "publisher": {"@type": "Organization", "name": "Arragon affiliates"}
-          },{
-            "@type": "Review",
-            "name": "David is absolutely amazing",
-            "reviewBody": "David is absolutely amazing, I'm a technology phobic if I don't understand things, I already had a website, but desperately needed into grading to look more professional, I had an idea of want I wanted, he did did this for me. My website is now so much better, cleaner and clearer to understand, and even other colleagues in my profession are loving the new design. Thank you",
-            "reviewRating": {
-              "@type": "Rating",
-              "ratingValue": "100",
-              "bestRating": "",
-              "worstRating": ""
-            },
-            "datePublished": "2024-11-12",
-            "author": {"@type": "Person", "name": "Dr. Hannah Emmett"},
-            "publisher": {"@type": "Organization", "name": "Anttz Chiropractor"}
-          },{
-            "@type": "Review",
-            "name": "The service has been seamless",
-            "reviewBody": "David at Kabooly.com made the entire process of getting my tutoring website up and running effortless. He understood exactly what I needed and delivered a professional, well-designed site that showcases my business perfectly. The service has been seamless, and any updates are handled quickly. I highly recommend David for anyone looking for a well designed, reliable and fully managed website solution",
-            "reviewRating": {
-              "@type": "Rating",
-              "ratingValue": "100",
-              "bestRating": "",
-              "worstRating": ""
-            },
-            "datePublished": "2025-02-01",
-            "author": {"@type": "Person", "name": "Michael Carragher"},
-            "publisher": {"@type": "Organization", "name": "Economics and Business Tutor"}
-          }]
+      "@context": "https://schema.org/",     
+      "@type": "Product", 
+      "name": "Managed Website Service",
+      "image": "",
+      "description": "Explore affordable web design packages at Kabooly. Custom solutions tailored to your needs, with clear pricing and no hidden fees.",
+      "brand": {
+        "@type": "Brand",
+        "name": "Standard"
+      },
+      "offers": {
+        "@type": "Offer",
+        "url": "",
+        "priceCurrency": "GBP",
+        "price": "50",
+        "availability": "https://schema.org/OnlineOnly",
+        "itemCondition": "https://schema.org/NewCondition"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "100",
+        "bestRating": "",
+        "worstRating": "",
+        "ratingCount": "3",
+        "reviewCount": "3"
+      },
+      "review": [{
+        "@type": "Review",
+        "name": "We are absolutely thrilled",
+        "reviewBody": "We are absolutely thrilled with the websites that David at Kabooly created for us! The entire process was seamless from start to finish. He took the time to understand our vision and translated it into performant, user-friendly sites that perfectly represents our brand. The site not only looks fantastic but also performs flawlessly. I highly recommend Kabooly for anyone looking to build or upgrade their website. He truly went above and beyond!",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "100",
+          "bestRating": "",
+          "worstRating": ""
         },
-        {
-          "@context": "https://schema.org",
-          "@type": "LocalBusiness",
-          "name": "Kabooly",
-          "image": "{{ env.site }}/android-chrome-512x512.png",
-          "@id": "{{ env.site }}/android-chrome-512x512.png",
-          "url": "{{ env.site }}",
-          "telephone": "{{ settings.phoneNumber }}",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "{{ settings.addressLineOne | safe }}",
-            "addressLocality": "{{ settings.addressLineThree | safe }}",
-            "addressRegion": "{{ settings.city | safe }}",
-            "postalCode": "{{ settings.postCode | safe }}",
-            "addressCountry": "{{ settings.country | safe }}"
-          },
-          "geo": {
-            "@type": "GeoCoordinates",
-            "latitude": 51.4139892,
-            "longitude": -0.303699
-          },
-          "openingHoursSpecification": {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": [
-              "Monday",
-              "Tuesday",
-              "Wednesday",
-              "Thursday",
-              "Friday"
-            ],
-            "opens": "09:00",
-            "closes": "17:00"
-          } 
-        }
-      ]
+        "datePublished": "2024-05-15",
+        "author": {"@type": "Person", "name": "Jonny Rowse"},
+        "publisher": {"@type": "Organization", "name": "Arragon affiliates"}
+      },{
+        "@type": "Review",
+        "name": "David is absolutely amazing",
+        "reviewBody": "David is absolutely amazing, I'm a technology phobic if I don't understand things, I already had a website, but desperately needed into grading to look more professional, I had an idea of want I wanted, he did did this for me. My website is now so much better, cleaner and clearer to understand, and even other colleagues in my profession are loving the new design. Thank you",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "100",
+          "bestRating": "",
+          "worstRating": ""
+        },
+        "datePublished": "2024-11-12",
+        "author": {"@type": "Person", "name": "Dr. Hannah Emmett"},
+        "publisher": {"@type": "Organization", "name": "Anttz Chiropractor"}
+      },{
+        "@type": "Review",
+        "name": "The service has been seamless",
+        "reviewBody": "David at Kabooly.com made the entire process of getting my tutoring website up and running effortless. He understood exactly what I needed and delivered a professional, well-designed site that showcases my business perfectly. The service has been seamless, and any updates are handled quickly. I highly recommend David for anyone looking for a well designed, reliable and fully managed website solution",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "100",
+          "bestRating": "",
+          "worstRating": ""
+        },
+        "datePublished": "2025-02-01",
+        "author": {"@type": "Person", "name": "Michael Carragher"},
+        "publisher": {"@type": "Organization", "name": "Economics and Business Tutor"}
+      }]
     }   
 
   {% else %}
