@@ -1,0 +1,136 @@
+---
+layout: default
+path: crm
+type: crm
+ogType: website
+description: Lightweight CRM software for service businesses. Manage contacts, track deals, send campaigns and grow your business with simple monthly pricing.
+seoTitle: Kabooly CRM | Contact Management for Service Businesses
+seoSchemaPageType: Product
+eleventyComputed:
+  canonical: "{{ env.site }}/crm/"
+---
+
+{% import "../_includes/partials/navbar.html" as navBar with context %}
+{% import "../_includes/components/buttons/more-button.html" as moreButton with context %}
+
+<section class="min-h-dvh flex flex-col bg-[color:var(--dark-blue)] justify-between border-b-4 border-b-[color:var(--dark-yellow)] border-solid">
+
+  {{ navBar.nav('bg-[color:var(--dark-blue)]') }}
+
+  <div class="container content-center">
+    <div class="flex flex-col md:flex-row items-center py-8 lg:py-16">
+      <div>
+        <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6">Contact management that actually makes sense</h1>
+        <p class="text-xl sm:text-2xl mb-8 max-w-3xl">Built for service businesses who need a lightweight CRM without the complexity. Manage customers, track deals, and send campaigns in one simple system.</p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="/crm/pricing/" class="inline-block bg-[color:var(--dark-yellow)] text-[color:var(--dark-copy)] px-8 py-4 rounded text-lg hover:opacity-90 transition text-center">View Pricing</a>
+          <a href="/contact/" class="inline-block bg-transparent border-2 border-white text-white px-8 py-4 rounded text-lg hover:bg-white hover:text-[color:var(--dark-blue)] transition text-center">Get in Touch</a>
+        </div>
+      </div>
+
+      {% include "../_includes/components/rocket.html" %}
+    </div>
+  </div>
+
+  {{ moreButton.button('bg-[color:var(--dark-yellow)]', 'border-[color:var(--dark-yellow)]', 'text-[color:var(--dark-copy)]') }}
+</section>
+
+<section data-test="moreButtonLocation">
+  <div class="container container--large dark-copy">
+    <h2 class="mb-8">Everything you need to manage customer relationships</h2>
+
+    <div class="grid md:grid-cols-3 gap-8 mb-12">
+      <div class="p-6">
+        <div class="text-4xl mb-4">📇</div>
+        <h3 class="text-2xl font-bold mb-3">Contact Management</h3>
+        <p>Store all your customer details in one place. Add notes, track interactions, and never lose track of a conversation again.</p>
+      </div>
+
+      <div class="p-6">
+        <div class="text-4xl mb-4">💼</div>
+        <h3 class="text-2xl font-bold mb-3">Deal Pipeline</h3>
+        <p>Track sales opportunities from first contact to closed deal. See where every opportunity stands at a glance.</p>
+      </div>
+
+      <div class="p-6">
+        <div class="text-4xl mb-4">📧</div>
+        <h3 class="text-2xl font-bold mb-3">Email Campaigns</h3>
+        <p>Send targeted campaigns to your contacts. Use templates to save time and track performance.</p>
+      </div>
+
+      <div class="p-6">
+        <div class="text-4xl mb-4">✅</div>
+        <h3 class="text-2xl font-bold mb-3">Tasks & Activities</h3>
+        <p>Track calls, meetings, emails, and notes. Set reminders so nothing falls through the cracks.</p>
+      </div>
+
+      <div class="p-6">
+        <div class="text-4xl mb-4">👥</div>
+        <h3 class="text-2xl font-bold mb-3">Team Collaboration</h3>
+        <p>Add team members with different roles. Everyone sees the same up-to-date customer information.</p>
+      </div>
+
+      <div class="p-6">
+        <div class="text-4xl mb-4">🏷️</div>
+        <h3 class="text-2xl font-bold mb-3">Custom Tags</h3>
+        <p>Organize contacts your way with custom tags. Create segments for targeted campaigns.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-[color:var(--dark-purple)]">
+  <div class="container container--large">
+    <h2 class="mb-8">Built for service businesses</h2>
+    <div class="max-w-3xl">
+      <p class="text-lg mb-4">Most CRMs are bloated with features you'll never use. Kabooly CRM focuses on what service businesses actually need:</p>
+      <ul class="space-y-3 text-lg">
+        <li class="flex items-start">
+          <svg class="w-6 h-6 mr-2 flex-shrink-0 text-[color:var(--dark-yellow)] mt-1" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+          </svg>
+          <span>Simple enough to use every day without training</span>
+        </li>
+        <li class="flex items-start">
+          <svg class="w-6 h-6 mr-2 flex-shrink-0 text-[color:var(--dark-yellow)] mt-1" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+          </svg>
+          <span>Fast and responsive, not clunky and slow</span>
+        </li>
+        <li class="flex items-start">
+          <svg class="w-6 h-6 mr-2 flex-shrink-0 text-[color:var(--dark-yellow)] mt-1" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+          </svg>
+          <span>Affordable monthly pricing that scales with you</span>
+        </li>
+        <li class="flex items-start">
+          <svg class="w-6 h-6 mr-2 flex-shrink-0 text-[color:var(--dark-yellow)] mt-1" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+          </svg>
+          <span>Secure and reliable with enterprise-grade security</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container container--large dark-copy">
+    <h2 class="mb-8">Simple pricing that grows with you</h2>
+    <p class="text-xl mb-8 max-w-3xl">Three plans designed for different business sizes. Start small and scale up when you need to.</p>
+    <div class="text-center">
+      <a href="/crm/pricing/" class="inline-block bg-[color:var(--dark-yellow)] text-[color:var(--dark-copy)] px-8 py-4 rounded text-lg hover:opacity-90 transition">View Pricing Plans</a>
+    </div>
+  </div>
+</section>
+
+<section class="bg-[color:var(--dark-gray)]">
+  <div class="container container--large">
+    <h2 class="mb-8">Ready to get started?</h2>
+    <p class="text-xl mb-8 max-w-3xl">Get in touch to discuss your needs and see if Kabooly CRM is right for your business.</p>
+    <div class="flex flex-col sm:flex-row gap-4">
+      <a href="/contact/" class="inline-block bg-[color:var(--dark-yellow)] text-[color:var(--dark-copy)] px-8 py-4 rounded text-lg hover:opacity-90 transition text-center">Contact Me</a>
+      <a href="/crm/how-it-works/" class="inline-block bg-transparent border-2 border-white text-white px-8 py-4 rounded text-lg hover:bg-white hover:text-[color:var(--dark-gray)] transition text-center">How It Works</a>
+    </div>
+  </div>
+</section>

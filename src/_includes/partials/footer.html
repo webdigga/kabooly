@@ -13,7 +13,7 @@
           </a>
         </div>
 
-        <p class="mt-4 text-sm font-normal">Kabooly is your partner in creating effective managed website solutions. I focus on providing personalised design and dedicated support to help your business establish a strong online presence and achieve its goals.</p>
+        <p class="mt-4 text-sm font-normal">Kabooly provides managed digital solutions for growing businesses. From professionally managed websites to lightweight CRM software, I focus on delivering practical tools with dedicated support to help your business succeed.</p>
 
         <div class="mt-4 flex items-center">
           <span class="[&>svg]:h-5 [&>svg]:w-5">
@@ -115,23 +115,36 @@
       </div>
       <div class="flex w-full flex-col justify-between sm:flex-row md:mt-0">
         <div class="mt-5">
-          
+
           {% if navigation.items %}
 
             <ul>
               {% for item in navigation.items %}
-                <li class="mt-3">
-                  <a                
-                    class="hover:opacity-70 text-sm font-normal underline"                
+                <li class="mt-5 first:mt-0">
+                  <a
+                    class="hover:opacity-70 text-base font-bold no-underline"
                     href="{{ item.url }}">
                     {{ item.text }}
                   </a>
+                  {% if item.children %}
+                    <ul class="mt-2">
+                      {% for child in item.children %}
+                        <li class="mt-1.5 pl-3">
+                          <a
+                            class="hover:opacity-70 text-sm font-normal underline"
+                            href="{{ child.url }}">
+                            {{ child.text }}
+                          </a>
+                        </li>
+                      {% endfor %}
+                    </ul>
+                  {% endif %}
                 </li>
               {% endfor %}
             </ul>
 
           {% endif %}
-          
+
         </div>
       </div>
     </div>

@@ -1,25 +1,25 @@
 ---
 layout: default
-path: pricing
-type: pricing
+path: managedWebsiteServicePricing
+type: managedWebsiteServicePricing
 ogType: website
 seoTitle: Pricing, simplified | Affordable Packages | Kabooly
-description: Affordable web design with transparent pricing. Get a custom website, hosting, domain & support—all in one simple monthly package. No hidden fees!
+description: Affordable web design with transparent pricing. Get a custom website, hosting, domain and support in one simple monthly package. No hidden fees.
 seoSchemaPageType: Product
 eleventyComputed:
-  canonical: "{{ env.site }}/pricing/"
+  canonical: "{{ env.site }}/managed-website-service/pricing/"
 ---
 
-{% import "./_includes/partials/navbar.html" as navBar with context %}
-{% import "./_includes/components/buttons/more-button.html" as moreButton with context %}
-{% import "./_includes/components/faqs.html" as faqs with context %}
+{% import "../_includes/partials/navbar.html" as navBar with context %}
+{% import "../_includes/components/buttons/more-button.html" as moreButton with context %}
+{% import "../_includes/components/faqs.html" as faqs with context %}
 
 <section class="min-h-dvh flex flex-col bg-[color:var(--dark-copy)] justify-between border-b-4 border-b-[color:var(--light-yellow)] border-solid">
 
   {{ navBar.nav('bg-[color:var(--dark-copy)]') }}
-  
+
   <div class="container content-center">
-    {% include "./_includes/components/hero-pricing.html" %}
+    {% include "../_includes/components/hero-pricing.html" %}
   </div>
 
   {{ moreButton.button('bg-[color:var(--light-yellow)]', 'border-[color:var(--light-yellow)]', 'text-[color:var(--dark-copy)]') }}
@@ -28,39 +28,39 @@ eleventyComputed:
 <section data-test="moreButtonLocation">
   <div class="container container--large dark-copy">
     <div class="mb-4">
-      <h2 class="inline-block">My Pricing Plans.</h2>
+      <h2 class="inline-block">My Pricing Plans</h2>
     </div>
 
     <div class="md:flex" id="pricing">
-      {% include "./_includes/components/standard-pricing.html" %}
+      {% include "../_includes/components/standard-pricing.html" %}
 
-      {% include "./_includes/components/pro-pricing.html" %}
+      {% include "../_includes/components/pro-pricing.html" %}
     </div>
   </div>
-  
+
 </section>
 
 <section class="bg-[color:var(--dark-purple)]">
   <div class="container container--large flex flex-col max-w-2xl">
-    
-    
+
+
     <div class="mb-4">
-      <h2 class="inline-block">How does pricing work.</h2>
+      <h2 class="inline-block">How does pricing work</h2>
     </div>
 
     <div class="flex flex-col sm:items-center">
-      {% include "./_includes/components/how-does-pricing-work.html" %}
+      {% include "../_includes/components/how-does-pricing-work.html" %}
     </div>
-    
 
-    
+
+
 </section>
 
 <section>
   <div class="container container--large">
-    <h2 class="mb-4 dark-copy">Frequently Asked Questions.</h2>
+    <h2 class="mb-4 dark-copy">Frequently Asked Questions</h2>
 
     {{ faqs.faqComponent('dark-copy') }}
-    
+
   </div>
 </section>

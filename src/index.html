@@ -3,8 +3,8 @@ layout: default
 path: home
 type: home
 ogType: website
-description: Pay monthly websites, expertly built by Kabooly. A Pay Monthly Digital service for small business websites. Everything you need to succeed online.
-seoTitle: Managed Websites, Paid Monthly | Kabooly
+description: Managed digital solutions for growing businesses. Monthly website management and CRM software to help service businesses succeed online.
+seoTitle: Managed Digital Solutions, Paid Monthly | Kabooly
 seoSchemaPageType: Organization
 eleventyComputed:
   canonical: "{{ env.site }}/"
@@ -12,65 +12,131 @@ eleventyComputed:
 
 {% import "./_includes/partials/navbar.html" as navBar with context %}
 {% import "./_includes/components/buttons/more-button.html" as moreButton with context %}
-{% import "./_includes/components/faqs.html" as faqs with context %}
 
 <section class="min-h-dvh flex flex-col bg-[color:var(--dark-blue)] justify-between border-b-4 border-b-[color:var(--dark-yellow)] border-solid">
 
   {{ navBar.nav('bg-[color:var(--dark-blue)]') }}
-  
+
   <div class="container content-center">
-    {% include "./_includes/components/hero.html" %}
+    <div class="flex flex-col md:flex-row items-center py-8 lg:py-16">
+      <div>
+        <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6">Managed digital solutions, paid monthly</h1>
+        <p class="text-xl sm:text-2xl mb-8 max-w-3xl">Simple, affordable tools to help your business grow. No upfront costs, no surprises.</p>
+      </div>
+
+      {% include "./_includes/components/rocket.html" %}
+    </div>
   </div>
-  
+
   {{ moreButton.button('bg-[color:var(--dark-yellow)]', 'border-[color:var(--dark-yellow)]', 'text-[color:var(--dark-copy)]') }}
 </section>
 
 <section data-test="moreButtonLocation">
   <div class="container container--large dark-copy">
-    <h2 class="mb-4">Helping Small Businesses Stay Focused — While I Handle the Website.</h2>
-    
-    {% include "./_includes/components/small-business.html" %}    
+    <h2 class="mb-8 text-center">Choose Your Solution</h2>
+
+    <div class="md:flex">
+
+      <!-- Managed Website Service -->
+      <div class="mb-4 md:mb-0 md:basis-1/2 rounded-md p-4 border-4 border-[color:var(--dark-copy)] md:mr-2 md:flex md:flex-col md:items-start">
+        <h3 class="text-3xl font-bold mb-4">Managed Website Service</h3>
+
+        <div class="mb-4">
+          <span class="text-4xl font-extrabold">From £50</span> <span class="text-xl">/month</span>
+        </div>
+
+        <p class="mb-4">Professional websites built and managed for you. Perfect for small businesses who need a strong online presence without the hassle.</p>
+
+        <ul class="mt-auto">
+          <li class="mb-2 flex">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" fill="var(--dark-blue)" class="size-6 min-w-6">
+              <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd" />
+            </svg>
+            <span class="ml-1">Custom website design and build</span>
+          </li>
+          <li class="mb-2 flex">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" fill="var(--dark-blue)" class="size-6 min-w-6">
+              <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd" />
+            </svg>
+            <span class="ml-1">Hosting, domain, and SSL included</span>
+          </li>
+          <li class="mb-2 flex">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" fill="var(--dark-blue)" class="size-6 min-w-6">
+              <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd" />
+            </svg>
+            <span class="ml-1">Monthly updates and maintenance</span>
+          </li>
+          <li class="mb-2 flex">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" fill="var(--dark-blue)" class="size-6 min-w-6">
+              <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd" />
+            </svg>
+            <span class="ml-1">SEO and Google Analytics</span>
+          </li>
+        </ul>
+
+        <a href="/managed-website-service/" class="inline-block bg-[color:var(--dark-yellow)] text-[color:var(--dark-copy)] px-6 py-3 rounded hover:opacity-90 transition !mb-0 !mr-0 w-full mt-3 md:self-end md:w-auto">Learn More</a>
+      </div>
+
+      <!-- CRM -->
+      <div class="md:basis-1/2 rounded-md p-4 border-4 border-[color:var(--dark-copy)] md:ml-2 md:flex md:flex-col md:items-start">
+        <h3 class="text-3xl font-bold mb-4">Kabooly CRM</h3>
+
+        <div class="mb-4">
+          <span class="text-4xl font-extrabold">From £100</span> <span class="text-xl">/month</span>
+        </div>
+
+        <p class="mb-4">Lightweight contact management for service businesses. Keep track of customers, deals, and communications in one simple system.</p>
+
+        <ul class="mt-auto">
+          <li class="mb-2 flex">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" fill="var(--dark-purple)" class="size-6 min-w-6">
+              <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd" />
+            </svg>
+            <span class="ml-1">Contact and customer management</span>
+          </li>
+          <li class="mb-2 flex">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" fill="var(--dark-purple)" class="size-6 min-w-6">
+              <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd" />
+            </svg>
+            <span class="ml-1">Deal pipeline and sales tracking</span>
+          </li>
+          <li class="mb-2 flex">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" fill="var(--dark-purple)" class="size-6 min-w-6">
+              <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd" />
+            </svg>
+            <span class="ml-1">Email campaigns and templates</span>
+          </li>
+          <li class="mb-2 flex">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" fill="var(--dark-purple)" class="size-6 min-w-6">
+              <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd" />
+            </svg>
+            <span class="ml-1">Team collaboration features</span>
+          </li>
+        </ul>
+
+        <a href="/crm/" class="inline-block bg-[color:var(--dark-yellow)] text-[color:var(--dark-copy)] px-6 py-3 rounded hover:opacity-90 transition !mb-0 !mr-0 w-full mt-3 md:self-end md:w-auto">Learn More</a>
+      </div>
+
+    </div>
   </div>
 </section>
 
 <section class="bg-[color:var(--dark-purple)]">
   <div class="container container--large">
-    <h2 class="mb-4">About Me - Web Designer in Kingston Upon Thames.</h2>
+    <h2 class="mb-4">About Me - Digital Solutions Provider in Kingston Upon Thames</h2>
     <div class="mb-4"><a href="/contact/#contact" class="anchor-highlight">Click here to contact me</a></div>
 
     {% include "./_includes/components/about-me.html" %}
-    
-  </div>
-</section>
 
-<section>
-  <div class="container container--large">
-    <h2 class="dark-copy mb-4">Get Your Free Website Audit.</h2>
-
-    {% include "./_includes/components/website-audit.html" %}
-    
-  </div>
-</section>
-
-<section class="bg-[color:var(--dark-gray)]">
-  <div class="container container--large">
-    <h2 class="mb-4">Frequently Asked Questions.</h2>
-
-    {{ faqs.faqComponent() }}
-    
   </div>
 </section>
 
 <section>
   <div class="container container--large dark-copy">
-    <h2 class="mb-4">My Pricing Plans.</h2>
-    <div class="mb-4">See more <a href="/pricing/" class="anchor-pop ">about pricing</a>.</div>
-
-    <div class="md:flex mt-8 sm:mt-12 lg:mt-16">
-      {% include "./_includes/components/standard-pricing.html" %}
-
-      {% include "./_includes/components/pro-pricing.html" %}
+    <h2 class="mb-4 text-center">Ready to Get Started?</h2>
+    <p class="text-xl text-center mb-8">Get in touch to discuss which solution is right for your business.</p>
+    <div class="text-center">
+      <a href="/contact/" class="inline-block bg-[color:var(--dark-yellow)] text-[color:var(--dark-copy)] px-8 py-4 rounded text-lg hover:opacity-90 transition">Contact Me</a>
     </div>
   </div>
-  
 </section>

@@ -1,9 +1,19 @@
 items:
   - text: Home
     url: /
-  - text: How it works?
-    url: /how-it-works/
-  - text: Pricing
-    url: /pricing/
+  - text: Managed Website Service
+    url: /managed-website-service/
+    children:
+      - text: How it works
+        url: /managed-website-service/how-it-works/
+      - text: Pricing
+        url: /managed-website-service/pricing/
+  - text: CRM
+    url: /crm/
+    children:
+      - text: How it works
+        url: /crm/how-it-works/
+      - text: Pricing
+        url: /crm/pricing/
   - text: Contact
     url: /contact/

@@ -1,3 +1,44 @@
+{% macro organizationSchema() %}
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": "{{ env.site }}/#organization",
+    "name": "Kabooly",
+    "url": "{{ env.site }}",
+    "logo": "{{ env.site }}/android-chrome-512x512.png",
+    "image": "{{ env.site }}/android-chrome-512x512.png",
+    "description": "Managed digital solutions for growing businesses. Monthly website management and CRM software to help service businesses succeed online.",
+    "telephone": "{{ settings.phoneNumber }}",
+    "email": "{{ settings.email }}",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "{{ settings.addressLineOne }}, {{ settings.addressLineTwo }}",
+      "addressLocality": "{{ settings.addressLineThree }}",
+      "addressRegion": "{{ settings.city }}",
+      "postalCode": "{{ settings.postCode }}",
+      "addressCountry": "{{ settings.country }}"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 51.4139892,
+      "longitude": -0.303699
+    },
+    "priceRange": "££",
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "opens": "09:00",
+      "closes": "17:00"
+    }
+  }
+{% endmacro %}
+
 {% macro schema() %}
 
   <script type="application/ld+json">
@@ -6,41 +47,7 @@
 
     {# Organisation JSON ld #}
 
-    {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "Kabooly",
-      "image": "{{ env.site }}/android-chrome-512x512.png",
-      "@id": "{{ env.site }}/android-chrome-512x512.png",
-      "url": "{{ env.site }}",
-      "telephone": "{{ settings.phoneNumber }}",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "{{ settings.addressLineOne | safe }}",
-        "addressLocality": "{{ settings.addressLineThree | safe }}",
-        "addressRegion": "{{ settings.city | safe }}",
-        "postalCode": "{{ settings.postCode | safe }}",
-        "addressCountry": "{{ settings.country | safe }}"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 51.4139892,
-        "longitude": -0.303699
-      },
-      "priceRange": "£",
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday"
-        ],
-        "opens": "09:00",
-        "closes": "17:00"
-      } 
-    }
+    {{ organizationSchema() }}
 
   {% elseif seoSchemaPageType == 'ContactPage' %}
 
@@ -49,45 +56,15 @@
     {
       "@context": "https://schema.org",
       "@type": "ContactPage",
+      "@id": "{{ env.site }}/contact/",
+      "url": "{{ env.site }}/contact/",
+      "name": "Contact Kabooly",
+      "description": "Get in touch with Kabooly for managed websites and CRM solutions.",
       "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": "{{ env.site }}/contact/"
       },
-      "publisher": {
-        "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        "name": "Kabooly",
-        "image": "{{ env.site }}/android-chrome-512x512.png",
-        "@id": "{{ env.site }}/android-chrome-512x512.png",
-        "url": "{{ env.site }}",
-        "telephone": "{{ settings.phoneNumber }}",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "{{ settings.addressLineOne | safe }}",
-          "addressLocality": "{{ settings.addressLineThree | safe }}",
-          "addressRegion": "{{ settings.city | safe }}",
-          "postalCode": "{{ settings.postCode | safe }}",
-          "addressCountry": "{{ settings.country | safe }}"
-        },
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": 51.4139892,
-          "longitude": -0.303699
-        },
-        "priceRange": "£",
-        "openingHoursSpecification": {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": [
-            "Monday",
-            "Tuesday",
-            "Wednesday",
-            "Thursday",
-            "Friday"
-          ],
-          "opens": "09:00",
-          "closes": "17:00"
-        } 
-      }
+      "publisher": {{ organizationSchema() }}
     }
 
   {% elseif seoSchemaPageType == 'FAQPage' %}
@@ -97,51 +74,18 @@
     {
       "@context": "https://schema.org",
       "@type": "FAQPage",
+      "@id": "{{ page.url }}",
       "mainEntity": [{% if faqsData.faqs %}{% for faqsDataItem in faqsData.faqs %}
         {
           "@type": "Question",
           "name": "{{ faqsDataItem.question | safe }}",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "<p>{{ faqsDataItem.answer | safe }}</p>"
+            "text": "{{ faqsDataItem.answer | safe }}"
           }
         }{{ "" if loop.last else "," }}{% endfor %}{% endif %}
       ],
-      "publisher": {
-        "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        "name": "Kabooly",
-        "image": "{{ env.site }}/android-chrome-512x512.png",
-        "@id": "{{ env.site }}/android-chrome-512x512.png",
-        "url": "{{ env.site }}",
-        "telephone": "{{ settings.phoneNumber }}",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "{{ settings.addressLineOne | safe }}",
-          "addressLocality": "{{ settings.addressLineThree | safe }}",
-          "addressRegion": "{{ settings.city | safe }}",
-          "postalCode": "{{ settings.postCode | safe }}",
-          "addressCountry": "{{ settings.country | safe }}"
-        },
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": 51.4139892,
-          "longitude": -0.303699
-        },
-        "priceRange": "£",
-        "openingHoursSpecification": {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": [
-            "Monday",
-            "Tuesday",
-            "Wednesday",
-            "Thursday",
-            "Friday"
-          ],
-          "opens": "09:00",
-          "closes": "17:00"
-        } 
-      }
+      "publisher": {{ organizationSchema() }}
     }
 
   {% elseif seoSchemaPageType == 'Product' %}
@@ -149,151 +93,177 @@
     {# Product JSON ld #}
 
     {
-      "@context": "https://schema.org/",
+      "@context": "https://schema.org",
       "@graph": [
-        {      
-          "@type": "Product", 
+        {% if path == 'managedWebsiteServicePricing' or path == 'pricing' or path == 'managed-website-service' %}
+        {
+          "@type": "Product",
+          "@id": "{{ env.site }}/managed-website-service/#product",
           "name": "Managed Website Service",
           "image": "{{ env.site }}/android-chrome-512x512.png",
-          "description": "Explore affordable web design packages at Kabooly. Custom solutions tailored to your needs, with clear pricing and no hidden fees.",
+          "description": "Professional websites built and managed for small businesses. Custom design, hosting, domain, and monthly maintenance included.",
           "brand": {
             "@type": "Brand",
-            "name": "Standard"
+            "name": "Kabooly"
           },
-          "offers": {
-            "@type": "Offer",
-            "url": "",
-            "priceCurrency": "GBP",
-            "price": "50",
-            "availability": "https://schema.org/OnlineOnly",
-            "itemCondition": "https://schema.org/NewCondition"
-          },
+          "offers": [
+            {
+              "@type": "Offer",
+              "name": "Standard Plan",
+              "url": "{{ env.site }}/managed-website-service/pricing/",
+              "priceCurrency": "GBP",
+              "price": "50",
+              "priceSpecification": {
+                "@type": "UnitPriceSpecification",
+                "price": "50",
+                "priceCurrency": "GBP",
+                "billingDuration": "P1M",
+                "billingIncrement": 1
+              },
+              "availability": "https://schema.org/InStock",
+              "itemCondition": "https://schema.org/NewCondition"
+            },
+            {
+              "@type": "Offer",
+              "name": "Pro Plan",
+              "url": "{{ env.site }}/managed-website-service/pricing/",
+              "priceCurrency": "GBP",
+              "price": "90",
+              "priceSpecification": {
+                "@type": "UnitPriceSpecification",
+                "price": "90",
+                "priceCurrency": "GBP",
+                "billingDuration": "P1M",
+                "billingIncrement": 1
+              },
+              "availability": "https://schema.org/InStock",
+              "itemCondition": "https://schema.org/NewCondition"
+            }
+          ],
           "aggregateRating": {
             "@type": "AggregateRating",
-            "ratingValue": "5",
-            "bestRating": "",
-            "worstRating": "",
+            "ratingValue": "5.0",
+            "bestRating": "5",
+            "worstRating": "1",
             "ratingCount": "3",
             "reviewCount": "3"
           },
-          "review": [{
-            "@type": "Review",
-            "name": "We are absolutely thrilled",
-            "reviewBody": "We are absolutely thrilled with the websites that David at Kabooly created for us! The entire process was seamless from start to finish. He took the time to understand our vision and translated it into performant, user-friendly sites that perfectly represents our brand. The site not only looks fantastic but also performs flawlessly. I highly recommend Kabooly for anyone looking to build or upgrade their website. He truly went above and beyond!",
-            "reviewRating": {
-              "@type": "Rating",
-              "ratingValue": "5",
-              "bestRating": "",
-              "worstRating": ""
+          "review": [
+            {
+              "@type": "Review",
+              "name": "We are absolutely thrilled",
+              "reviewBody": "We are absolutely thrilled with the websites that David at Kabooly created for us! The entire process was seamless from start to finish. He took the time to understand our vision and translated it into performant, user-friendly sites that perfectly represents our brand. The site not only looks fantastic but also performs flawlessly. I highly recommend Kabooly for anyone looking to build or upgrade their website. He truly went above and beyond!",
+              "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": "5",
+                "bestRating": "5",
+                "worstRating": "1"
+              },
+              "datePublished": "2024-05-15",
+              "author": {"@type": "Person", "name": "Jonny Rowse"},
+              "publisher": {"@type": "Organization", "name": "Arragon affiliates"}
             },
-            "datePublished": "2024-05-15",
-            "author": {"@type": "Person", "name": "Jonny Rowse"},
-            "publisher": {"@type": "Organization", "name": "Arragon affiliates"}
-          },{
-            "@type": "Review",
-            "name": "David is absolutely amazing",
-            "reviewBody": "David is absolutely amazing, I'm a technology phobic if I don't understand things, I already had a website, but desperately needed into grading to look more professional, I had an idea of want I wanted, he did did this for me. My website is now so much better, cleaner and clearer to understand, and even other colleagues in my profession are loving the new design. Thank you",
-            "reviewRating": {
-              "@type": "Rating",
-              "ratingValue": "5",
-              "bestRating": "",
-              "worstRating": ""
+            {
+              "@type": "Review",
+              "name": "David is absolutely amazing",
+              "reviewBody": "David is absolutely amazing, I'm a technology phobic if I don't understand things, I already had a website, but desperately needed into grading to look more professional, I had an idea of want I wanted, he did did this for me. My website is now so much better, cleaner and clearer to understand, and even other colleagues in my profession are loving the new design. Thank you",
+              "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": "5",
+                "bestRating": "5",
+                "worstRating": "1"
+              },
+              "datePublished": "2024-11-12",
+              "author": {"@type": "Person", "name": "Dr. Hannah Emmett"},
+              "publisher": {"@type": "Organization", "name": "Anttz Chiropractor"}
             },
-            "datePublished": "2024-11-12",
-            "author": {"@type": "Person", "name": "Dr. Hannah Emmett"},
-            "publisher": {"@type": "Organization", "name": "Anttz Chiropractor"}
-          },{
-            "@type": "Review",
-            "name": "The service has been seamless",
-            "reviewBody": "David at Kabooly.com made the entire process of getting my tutoring website up and running effortless. He understood exactly what I needed and delivered a professional, well-designed site that showcases my business perfectly. The service has been seamless, and any updates are handled quickly. I highly recommend David for anyone looking for a well designed, reliable and fully managed website solution",
-            "reviewRating": {
-              "@type": "Rating",
-              "ratingValue": "5",
-              "bestRating": "",
-              "worstRating": ""
-            },
-            "datePublished": "2025-02-01",
-            "author": {"@type": "Person", "name": "Michael Carragher"},
-            "publisher": {"@type": "Organization", "name": "Economics and Business Tutor"}
-          }]
+            {
+              "@type": "Review",
+              "name": "The service has been seamless",
+              "reviewBody": "David at Kabooly.com made the entire process of getting my tutoring website up and running effortless. He understood exactly what I needed and delivered a professional, well-designed site that showcases my business perfectly. The service has been seamless, and any updates are handled quickly. I highly recommend David for anyone looking for a well designed, reliable and fully managed website solution",
+              "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": "5",
+                "bestRating": "5",
+                "worstRating": "1"
+              },
+              "datePublished": "2025-02-01",
+              "author": {"@type": "Person", "name": "Michael Carragher"},
+              "publisher": {"@type": "Organization", "name": "Economics and Business Tutor"}
+            }
+          ]
         },
+        {% elif path == 'crmPricing' or path == 'crm' %}
         {
-          "@context": "https://schema.org",
-          "@type": "LocalBusiness",
-          "name": "Kabooly",
+          "@type": "SoftwareApplication",
+          "@id": "{{ env.site }}/crm/#product",
+          "name": "Kabooly CRM",
+          "applicationCategory": "BusinessApplication",
+          "operatingSystem": "Web Browser",
           "image": "{{ env.site }}/android-chrome-512x512.png",
-          "@id": "{{ env.site }}/android-chrome-512x512.png",
-          "url": "{{ env.site }}",
-          "telephone": "{{ settings.phoneNumber }}",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "{{ settings.addressLineOne | safe }}",
-            "addressLocality": "{{ settings.addressLineThree | safe }}",
-            "addressRegion": "{{ settings.city | safe }}",
-            "postalCode": "{{ settings.postCode | safe }}",
-            "addressCountry": "{{ settings.country | safe }}"
+          "description": "Lightweight CRM software for service businesses. Manage contacts, track deals, send campaigns and collaborate with your team.",
+          "brand": {
+            "@type": "Brand",
+            "name": "Kabooly"
           },
-          "geo": {
-            "@type": "GeoCoordinates",
-            "latitude": 51.4139892,
-            "longitude": -0.303699
-          },
-          "priceRange": "£",
-          "openingHoursSpecification": {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": [
-              "Monday",
-              "Tuesday",
-              "Wednesday",
-              "Thursday",
-              "Friday"
-            ],
-            "opens": "09:00",
-            "closes": "17:00"
-          } 
-        }
+          "offers": [
+            {
+              "@type": "Offer",
+              "name": "Starter",
+              "url": "{{ env.site }}/crm/pricing/",
+              "priceCurrency": "GBP",
+              "price": "100",
+              "priceSpecification": {
+                "@type": "UnitPriceSpecification",
+                "price": "100",
+                "priceCurrency": "GBP",
+                "billingDuration": "P1M",
+                "billingIncrement": 1
+              },
+              "availability": "https://schema.org/InStock"
+            },
+            {
+              "@type": "Offer",
+              "name": "Professional",
+              "url": "{{ env.site }}/crm/pricing/",
+              "priceCurrency": "GBP",
+              "price": "200",
+              "priceSpecification": {
+                "@type": "UnitPriceSpecification",
+                "price": "200",
+                "priceCurrency": "GBP",
+                "billingDuration": "P1M",
+                "billingIncrement": 1
+              },
+              "availability": "https://schema.org/InStock"
+            },
+            {
+              "@type": "Offer",
+              "name": "Enterprise",
+              "url": "{{ env.site }}/crm/pricing/",
+              "priceCurrency": "GBP",
+              "price": "500",
+              "priceSpecification": {
+                "@type": "UnitPriceSpecification",
+                "price": "500",
+                "priceCurrency": "GBP",
+                "billingDuration": "P1M",
+                "billingIncrement": 1
+              },
+              "availability": "https://schema.org/InStock"
+            }
+          ]
+        },
+        {% endif %}
+        {{ organizationSchema() }}
       ]
     }   
 
   {% else %}
 
-    {# WebSite JSON ld #}
+    {# Default - LocalBusiness JSON ld #}
 
-    {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "Kabooly",
-      "image": "{{ env.site }}/android-chrome-512x512.png",
-      "@id": "{{ env.site }}/android-chrome-512x512.png",
-      "url": "{{ env.site }}",
-      "telephone": "{{ settings.phoneNumber }}",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "{{ settings.addressLineOne | safe }}",
-        "addressLocality": "{{ settings.addressLineThree | safe }}",
-        "addressRegion": "{{ settings.city | safe }}",
-        "postalCode": "{{ settings.postCode | safe }}",
-        "addressCountry": "{{ settings.country | safe }}"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 51.4139892,
-        "longitude": -0.303699
-      },
-      "priceRange": "£",
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday"
-        ],
-        "opens": "09:00",
-        "closes": "17:00"
-      } 
-    }
+    {{ organizationSchema() }}
 
   {% endif %}
 

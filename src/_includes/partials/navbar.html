@@ -45,12 +45,36 @@
 
           <ul class="pt-6 lg:pt-0 list-reset lg:flex justify-end flex-1 items-center">
             {% for item in navigation.items %}
-              <li class="nav__item">
-                <a                
-                  class="text-ml inline-block py-3 px-4 hover:underline-offset-4 hover:decoration-1 hover:underline hover:decoration-[color:var(--dark-yellow)] {% if item.url == page.url %}underline-offset-4 decoration-2 underline decoration-[color:var(--dark-yellow)] {% else %} no-underline {% endif %}"                
-                  href="{{ item.url }}">
-                  {{ item.text }}
-                </a>
+              <li class="nav__item {% if item.children %}relative group{% endif %}">
+                {% if item.children %}
+                  <div class="relative">
+                    <a
+                      class="text-ml inline-block py-3 px-4 hover:underline-offset-4 hover:decoration-1 hover:underline hover:decoration-[color:var(--dark-yellow)] {% if item.url == page.url %}underline-offset-4 decoration-2 underline decoration-[color:var(--dark-yellow)] {% else %} no-underline {% endif %}"
+                      href="{{ item.url }}">
+                      {{ item.text }}
+                      <svg class="w-4 h-4 inline-block ml-1" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                      </svg>
+                    </a>
+                    <ul class="hidden lg:absolute lg:top-full lg:left-0 lg:bg-white lg:text-[color:var(--dark-copy)] lg:shadow-xl lg:min-w-[280px] lg:rounded-md lg:border lg:border-gray-200 lg:py-2 lg:group-hover:block">
+                      {% for child in item.children %}
+                        <li>
+                          <a
+                            class="block py-3 px-6 hover:bg-gray-100 {% if child.url == page.url %}bg-gray-100 font-semibold{% endif %}"
+                            href="{{ child.url }}">
+                            {{ child.text }}
+                          </a>
+                        </li>
+                      {% endfor %}
+                    </ul>
+                  </div>
+                {% else %}
+                  <a
+                    class="text-ml inline-block py-3 px-4 hover:underline-offset-4 hover:decoration-1 hover:underline hover:decoration-[color:var(--dark-yellow)] {% if item.url == page.url %}underline-offset-4 decoration-2 underline decoration-[color:var(--dark-yellow)] {% else %} no-underline {% endif %}"
+                    href="{{ item.url }}">
+                    {{ item.text }}
+                  </a>
+                {% endif %}
               </li>
             {% endfor %}
           </ul>
