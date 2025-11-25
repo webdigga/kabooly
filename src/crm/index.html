@@ -3,8 +3,8 @@ layout: default
 path: crm
 type: crm
 ogType: website
-description: Lightweight CRM software for service businesses. Manage contacts, track deals, send campaigns and grow your business with simple monthly pricing.
-seoTitle: Kabooly CRM | Contact Management for Service Businesses
+description: CRM software for small businesses. Manage contacts, track deals, send campaigns and grow your business with simple monthly pricing.
+seoTitle: Kabooly CRM | Contact Management for Small Businesses
 seoSchemaPageType: Product
 eleventyComputed:
   canonical: "{{ env.site }}/crm/"
@@ -12,24 +12,16 @@ eleventyComputed:
 
 {% import "../_includes/partials/navbar.html" as navBar with context %}
 {% import "../_includes/components/buttons/more-button.html" as moreButton with context %}
+{% import "../_includes/components/crm-faqs.html" as faqs with context %}
+{% import "../_includes/components/buttons/buy-a-crm.html" as buyButton with context %}
+{% import "../_includes/components/buttons/secondary-button.html" as secondaryButton with context %}
 
 <section class="min-h-dvh flex flex-col bg-[color:var(--dark-blue)] justify-between border-b-4 border-b-[color:var(--dark-yellow)] border-solid">
 
   {{ navBar.nav('bg-[color:var(--dark-blue)]') }}
 
   <div class="container content-center">
-    <div class="flex flex-col md:flex-row items-center py-8 lg:py-16">
-      <div>
-        <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6">Contact management that actually makes sense</h1>
-        <p class="text-xl sm:text-2xl mb-8 max-w-3xl">Built for service businesses who need a lightweight CRM without the complexity. Manage customers, track deals, and send campaigns in one simple system.</p>
-        <div class="flex flex-col sm:flex-row gap-4">
-          <a href="/crm/pricing/" class="inline-block bg-[color:var(--dark-yellow)] text-[color:var(--dark-copy)] px-8 py-4 rounded text-lg hover:opacity-90 transition text-center">View Pricing</a>
-          <a href="/contact/" class="inline-block bg-transparent border-2 border-white text-white px-8 py-4 rounded text-lg hover:bg-white hover:text-[color:var(--dark-blue)] transition text-center">Get in Touch</a>
-        </div>
-      </div>
-
-      {% include "../_includes/components/rocket.html" %}
-    </div>
+    {% include "../_includes/components/hero-crm-index.html" %}
   </div>
 
   {{ moreButton.button('bg-[color:var(--dark-yellow)]', 'border-[color:var(--dark-yellow)]', 'text-[color:var(--dark-copy)]') }}
@@ -39,41 +31,60 @@ eleventyComputed:
   <div class="container container--large dark-copy">
     <h2 class="mb-8">Everything you need to manage customer relationships</h2>
 
-    <div class="grid md:grid-cols-3 gap-8 mb-12">
-      <div class="p-6">
-        <div class="text-4xl mb-4">📇</div>
-        <h3 class="text-2xl font-bold mb-3">Contact Management</h3>
-        <p>Store all your customer details in one place. Add notes, track interactions, and never lose track of a conversation again.</p>
+    <div class="grid md:grid-cols-3 gap-6 mb-12">
+      <div class="flex">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" fill="var(--dark-purple)" class="size-6 min-w-6 mt-1">
+          <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd" />
+        </svg>
+        <div class="ml-3">
+          <h3 class="font-bold mb-1">Contact Management</h3>
+          <p>Store all your customer details in one place. Add notes, track interactions, and never lose track of a conversation again.</p>
+        </div>
       </div>
-
-      <div class="p-6">
-        <div class="text-4xl mb-4">💼</div>
-        <h3 class="text-2xl font-bold mb-3">Deal Pipeline</h3>
-        <p>Track sales opportunities from first contact to closed deal. See where every opportunity stands at a glance.</p>
+      <div class="flex">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" fill="var(--dark-purple)" class="size-6 min-w-6 mt-1">
+          <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd" />
+        </svg>
+        <div class="ml-3">
+          <h3 class="font-bold mb-1">Deal Pipeline</h3>
+          <p>Track sales opportunities from first contact to closed deal. See where every opportunity stands at a glance.</p>
+        </div>
       </div>
-
-      <div class="p-6">
-        <div class="text-4xl mb-4">📧</div>
-        <h3 class="text-2xl font-bold mb-3">Email Campaigns</h3>
-        <p>Send targeted campaigns to your contacts. Use templates to save time and track performance.</p>
+      <div class="flex">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" fill="var(--dark-purple)" class="size-6 min-w-6 mt-1">
+          <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd" />
+        </svg>
+        <div class="ml-3">
+          <h3 class="font-bold mb-1">Email Campaigns</h3>
+          <p>Send targeted campaigns to your contacts. Use templates to save time and track performance.</p>
+        </div>
       </div>
-
-      <div class="p-6">
-        <div class="text-4xl mb-4">✅</div>
-        <h3 class="text-2xl font-bold mb-3">Tasks & Activities</h3>
-        <p>Track calls, meetings, emails, and notes. Set reminders so nothing falls through the cracks.</p>
+      <div class="flex">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" fill="var(--dark-purple)" class="size-6 min-w-6 mt-1">
+          <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd" />
+        </svg>
+        <div class="ml-3">
+          <h3 class="font-bold mb-1">Tasks & Activities</h3>
+          <p>Track calls, meetings, emails, and notes. Set reminders so nothing falls through the cracks.</p>
+        </div>
       </div>
-
-      <div class="p-6">
-        <div class="text-4xl mb-4">👥</div>
-        <h3 class="text-2xl font-bold mb-3">Team Collaboration</h3>
-        <p>Add team members with different roles. Everyone sees the same up-to-date customer information.</p>
+      <div class="flex">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" fill="var(--dark-purple)" class="size-6 min-w-6 mt-1">
+          <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd" />
+        </svg>
+        <div class="ml-3">
+          <h3 class="font-bold mb-1">Team Collaboration</h3>
+          <p>Add team members with different roles. Everyone sees the same up-to-date customer information.</p>
+        </div>
       </div>
-
-      <div class="p-6">
-        <div class="text-4xl mb-4">🏷️</div>
-        <h3 class="text-2xl font-bold mb-3">Custom Tags</h3>
-        <p>Organize contacts your way with custom tags. Create segments for targeted campaigns.</p>
+      <div class="flex">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" fill="var(--dark-purple)" class="size-6 min-w-6 mt-1">
+          <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd" />
+        </svg>
+        <div class="ml-3">
+          <h3 class="font-bold mb-1">Custom Tags</h3>
+          <p>Organize contacts your way with custom tags. Create segments for targeted campaigns.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -81,9 +92,9 @@ eleventyComputed:
 
 <section class="bg-[color:var(--dark-purple)]">
   <div class="container container--large">
-    <h2 class="mb-8">Built for service businesses</h2>
+    <h2 class="mb-8">Built for small businesses</h2>
     <div class="max-w-3xl">
-      <p class="text-lg mb-4">Most CRMs are bloated with features you'll never use. Kabooly CRM focuses on what service businesses actually need:</p>
+      <p class="text-lg mb-4">Most CRMs are bloated with features you'll never use. Kabooly CRM focuses on what small businesses actually need:</p>
       <ul class="space-y-3 text-lg">
         <li class="flex items-start">
           <svg class="w-6 h-6 mr-2 flex-shrink-0 text-[color:var(--dark-yellow)] mt-1" fill="currentColor" viewBox="0 0 20 20">
@@ -118,8 +129,8 @@ eleventyComputed:
   <div class="container container--large dark-copy">
     <h2 class="mb-8">Simple pricing that grows with you</h2>
     <p class="text-xl mb-8 max-w-3xl">Three plans designed for different business sizes. Start small and scale up when you need to.</p>
-    <div class="text-center">
-      <a href="/crm/pricing/" class="inline-block bg-[color:var(--dark-yellow)] text-[color:var(--dark-copy)] px-8 py-4 rounded text-lg hover:opacity-90 transition">View Pricing Plans</a>
+    <div>
+      {{ buyButton.button('View Pricing Plans', 'text-[color:var(--dark-copy)]', '/crm/pricing/') }}
     </div>
   </div>
 </section>
@@ -128,9 +139,18 @@ eleventyComputed:
   <div class="container container--large">
     <h2 class="mb-8">Ready to get started?</h2>
     <p class="text-xl mb-8 max-w-3xl">Get in touch to discuss your needs and see if Kabooly CRM is right for your business.</p>
-    <div class="flex flex-col sm:flex-row gap-4">
-      <a href="/contact/" class="inline-block bg-[color:var(--dark-yellow)] text-[color:var(--dark-copy)] px-8 py-4 rounded text-lg hover:opacity-90 transition text-center">Contact Me</a>
-      <a href="/crm/how-it-works/" class="inline-block bg-transparent border-2 border-white text-white px-8 py-4 rounded text-lg hover:bg-white hover:text-[color:var(--dark-gray)] transition text-center">How It Works</a>
+    <div class="flex">
+      {{ buyButton.button('Contact Me', 'text-[color:var(--dark-copy)]', '/contact/') }}
+      {{ secondaryButton.button('How It Works', '/crm/how-it-works/') }}
     </div>
+  </div>
+</section>
+
+<section>
+  <div class="container container--large">
+    <h2 class="mb-4 dark-copy">Frequently Asked Questions.</h2>
+
+    {{ faqs.faqComponent('dark-copy') }}
+
   </div>
 </section>

@@ -4,7 +4,7 @@ path: crmPricing
 type: crmPricing
 ogType: website
 seoTitle: CRM Pricing | Simple Monthly Plans | Kabooly
-description: Transparent CRM pricing for service businesses. Three plans to fit your needs. No hidden fees, no surprises. From £100 per month.
+description: Transparent CRM pricing for small businesses. Three plans to fit your needs. No hidden fees, no surprises. From £100 per month.
 seoSchemaPageType: Product
 eleventyComputed:
   canonical: "{{ env.site }}/crm/pricing/"
@@ -12,20 +12,15 @@ eleventyComputed:
 
 {% import "../_includes/partials/navbar.html" as navBar with context %}
 {% import "../_includes/components/buttons/more-button.html" as moreButton with context %}
+{% import "../_includes/components/crm-faqs.html" as faqs with context %}
+{% import "../_includes/components/buttons/buy-a-crm.html" as buyButton with context %}
 
 <section class="min-h-dvh flex flex-col bg-[color:var(--dark-copy)] justify-between border-b-4 border-b-[color:var(--light-yellow)] border-solid">
 
   {{ navBar.nav('bg-[color:var(--dark-copy)]') }}
 
   <div class="container content-center">
-    <div class="flex flex-col md:flex-row items-center py-8 lg:py-16">
-      <div>
-        <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6">Simple, transparent pricing</h1>
-        <p class="text-xl sm:text-2xl mb-8 max-w-3xl">Choose the plan that fits your business. Upgrade or downgrade anytime.</p>
-      </div>
-
-      {% include "../_includes/components/rocket.html" %}
-    </div>
+    {% include "../_includes/components/hero-crm-pricing.html" %}
   </div>
 
   {{ moreButton.button('bg-[color:var(--light-yellow)]', 'border-[color:var(--light-yellow)]', 'text-[color:var(--dark-copy)]') }}
@@ -33,158 +28,166 @@ eleventyComputed:
 
 <section data-test="moreButtonLocation" id="pricing">
   <div class="container container--large dark-copy">
-    <h2 class="mb-8 text-center">Choose Your Plan</h2>
+    <div class="mb-4">
+      <h2 class="inline-block">My Pricing Plans</h2>
+    </div>
 
-    <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-
+    <div class="md:flex">
       <!-- Starter Plan -->
-      <div class="bg-[color:var(--dark-purple)] p-8 rounded-lg flex flex-col">
-        <h3 class="text-3xl font-bold mb-2">Starter</h3>
-        <div class="text-4xl font-bold mb-6">£100<span class="text-lg font-normal">/month</span></div>
+      <div class="mb-4 md:mb-0 md:basis-1/3 rounded-md p-4 border-4 border-[color:var(--dark-copy)] md:mr-2 md:flex md:flex-col md:items-start">
+        <span class="mb-4 inline-block bg-[color:var(--dark-blue)] text-white text-sm px-2 py-1 rounded-md uppercase">Starter</span>
 
-        <p class="mb-6">Perfect for small teams getting started with CRM.</p>
+        <div class="mb-4">
+          <span class="text-6xl font-extrabold">£100</span> <span class="text-2xl">/month</span>
+        </div>
 
-        <ul class="space-y-3 mb-8 flex-grow">
-          <li class="flex items-start">
-            <svg class="w-6 h-6 mr-2 flex-shrink-0 text-[color:var(--dark-yellow)]" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+        <p class="mb-4">Perfect for small teams getting started with CRM.</p>
+
+        <ul class="mt-auto">
+          <li class="mb-2 flex">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" fill="var(--dark-blue)" class="size-6 min-w-6">
+              <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd" />
             </svg>
-            <span><strong>5,000</strong> contacts</span>
+            <span class="ml-1"><strong>5,000</strong> contacts</span>
           </li>
-          <li class="flex items-start">
-            <svg class="w-6 h-6 mr-2 flex-shrink-0 text-[color:var(--dark-yellow)]" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+          <li class="mb-2 flex">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" fill="var(--dark-blue)" class="size-6 min-w-6">
+              <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd" />
             </svg>
-            <span><strong>3</strong> team members</span>
+            <span class="ml-1"><strong>3</strong> team members</span>
           </li>
-          <li class="flex items-start">
-            <svg class="w-6 h-6 mr-2 flex-shrink-0 text-[color:var(--dark-yellow)]" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+          <li class="mb-2 flex">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" fill="var(--dark-blue)" class="size-6 min-w-6">
+              <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd" />
             </svg>
-            <span><strong>50</strong> marketing lists</span>
+            <span class="ml-1"><strong>50</strong> marketing lists</span>
           </li>
-          <li class="flex items-start">
-            <svg class="w-6 h-6 mr-2 flex-shrink-0 text-[color:var(--dark-yellow)]" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+          <li class="mb-2 flex">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" fill="var(--dark-blue)" class="size-6 min-w-6">
+              <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd" />
             </svg>
-            <span><strong>100</strong> email templates</span>
+            <span class="ml-1"><strong>100</strong> email templates</span>
           </li>
-          <li class="flex items-start">
-            <svg class="w-6 h-6 mr-2 flex-shrink-0 text-[color:var(--dark-yellow)]" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+          <li class="mb-2 flex">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" fill="var(--dark-blue)" class="size-6 min-w-6">
+              <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd" />
             </svg>
-            <span><strong>50</strong> active deals</span>
+            <span class="ml-1"><strong>50</strong> active deals</span>
           </li>
-          <li class="flex items-start">
-            <svg class="w-6 h-6 mr-2 flex-shrink-0 text-[color:var(--dark-yellow)]" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+          <li class="mb-2 flex">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" fill="var(--dark-blue)" class="size-6 min-w-6">
+              <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd" />
             </svg>
-            <span><strong>10,000</strong> emails per month</span>
+            <span class="ml-1"><strong>10,000</strong> emails per month</span>
           </li>
         </ul>
 
-        <a href="/contact/" class="inline-block bg-[color:var(--dark-yellow)] text-[color:var(--dark-copy)] px-6 py-3 rounded hover:opacity-90 transition text-center">Get Started</a>
+        {{ buyButton.button('Buy the Starter plan', 'text-[color:var(--dark-copy)] !mb-0 !mr-0 w-full mt-3 md:self-end md:w-auto') }}
       </div>
 
       <!-- Professional Plan -->
-      <div class="bg-[color:var(--dark-yellow)] text-[color:var(--dark-copy)] p-8 rounded-lg flex flex-col relative">
-        <div class="absolute top-0 right-0 bg-[color:var(--dark-purple)] text-white px-4 py-1 text-sm font-bold rounded-bl rounded-tr-lg">POPULAR</div>
-        <h3 class="text-3xl font-bold mb-2">Professional</h3>
-        <div class="text-4xl font-bold mb-6">£200<span class="text-lg font-normal">/month</span></div>
+      <div class="mb-4 md:mb-0 md:basis-1/3 rounded-md p-4 border-4 border-[color:var(--dark-copy)] md:mx-2 md:flex md:flex-col md:items-start">
+        <span class="mb-4 inline-block bg-[color:var(--dark-purple)] text-white text-sm px-2 py-1 rounded-md uppercase">Professional</span>
 
-        <p class="mb-6">For growing businesses that need more capacity.</p>
+        <div class="mb-4">
+          <span class="text-6xl font-extrabold">£200</span> <span class="text-2xl">/month</span>
+        </div>
 
-        <ul class="space-y-3 mb-8 flex-grow">
-          <li class="flex items-start">
-            <svg class="w-6 h-6 mr-2 flex-shrink-0 text-[color:var(--dark-purple)]" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+        <p class="mb-4">For growing businesses that need more capacity.</p>
+
+        <ul class="mt-auto">
+          <li class="mb-2 flex">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" fill="var(--dark-purple)" class="size-6 min-w-6">
+              <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd" />
             </svg>
-            <span><strong>20,000</strong> contacts</span>
+            <span class="ml-1"><strong>20,000</strong> contacts</span>
           </li>
-          <li class="flex items-start">
-            <svg class="w-6 h-6 mr-2 flex-shrink-0 text-[color:var(--dark-purple)]" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+          <li class="mb-2 flex">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" fill="var(--dark-purple)" class="size-6 min-w-6">
+              <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd" />
             </svg>
-            <span><strong>10</strong> team members</span>
+            <span class="ml-1"><strong>10</strong> team members</span>
           </li>
-          <li class="flex items-start">
-            <svg class="w-6 h-6 mr-2 flex-shrink-0 text-[color:var(--dark-purple)]" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+          <li class="mb-2 flex">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" fill="var(--dark-purple)" class="size-6 min-w-6">
+              <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd" />
             </svg>
-            <span><strong>Unlimited</strong> marketing lists</span>
+            <span class="ml-1"><strong>Unlimited</strong> marketing lists</span>
           </li>
-          <li class="flex items-start">
-            <svg class="w-6 h-6 mr-2 flex-shrink-0 text-[color:var(--dark-purple)]" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+          <li class="mb-2 flex">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" fill="var(--dark-purple)" class="size-6 min-w-6">
+              <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd" />
             </svg>
-            <span><strong>Unlimited</strong> email templates</span>
+            <span class="ml-1"><strong>Unlimited</strong> email templates</span>
           </li>
-          <li class="flex items-start">
-            <svg class="w-6 h-6 mr-2 flex-shrink-0 text-[color:var(--dark-purple)]" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+          <li class="mb-2 flex">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" fill="var(--dark-purple)" class="size-6 min-w-6">
+              <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd" />
             </svg>
-            <span><strong>Unlimited</strong> active deals</span>
+            <span class="ml-1"><strong>Unlimited</strong> active deals</span>
           </li>
-          <li class="flex items-start">
-            <svg class="w-6 h-6 mr-2 flex-shrink-0 text-[color:var(--dark-purple)]" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+          <li class="mb-2 flex">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" fill="var(--dark-purple)" class="size-6 min-w-6">
+              <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd" />
             </svg>
-            <span><strong>40,000</strong> emails per month</span>
+            <span class="ml-1"><strong>40,000</strong> emails per month</span>
           </li>
         </ul>
 
-        <a href="/contact/" class="inline-block bg-[color:var(--dark-purple)] text-white px-6 py-3 rounded hover:opacity-90 transition text-center">Get Started</a>
+        {{ buyButton.button('Buy the Professional plan', 'text-[color:var(--dark-copy)] !mb-0 !mr-0 w-full mt-3 md:self-end md:w-auto') }}
       </div>
 
       <!-- Enterprise Plan -->
-      <div class="bg-[color:var(--dark-purple)] p-8 rounded-lg flex flex-col">
-        <h3 class="text-3xl font-bold mb-2">Enterprise</h3>
-        <div class="text-4xl font-bold mb-6">£500<span class="text-lg font-normal">/month</span></div>
+      <div class="md:basis-1/3 rounded-md p-4 border-4 border-[color:var(--dark-copy)] md:ml-2 md:flex md:flex-col md:items-start">
+        <span class="mb-4 inline-block bg-[color:var(--dark-gray)] text-white text-sm px-2 py-1 rounded-md uppercase">Enterprise</span>
 
-        <p class="mb-6">For larger teams with high-volume needs.</p>
+        <div class="mb-4">
+          <span class="text-6xl font-extrabold">£500</span> <span class="text-2xl">/month</span>
+        </div>
 
-        <ul class="space-y-3 mb-8 flex-grow">
-          <li class="flex items-start">
-            <svg class="w-6 h-6 mr-2 flex-shrink-0 text-[color:var(--dark-yellow)]" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+        <p class="mb-4">For larger teams with high-volume needs.</p>
+
+        <ul class="mt-auto">
+          <li class="mb-2 flex">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" fill="var(--dark-gray)" class="size-6 min-w-6">
+              <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd" />
             </svg>
-            <span><strong>50,000</strong> contacts</span>
+            <span class="ml-1"><strong>50,000</strong> contacts</span>
           </li>
-          <li class="flex items-start">
-            <svg class="w-6 h-6 mr-2 flex-shrink-0 text-[color:var(--dark-yellow)]" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+          <li class="mb-2 flex">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" fill="var(--dark-gray)" class="size-6 min-w-6">
+              <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd" />
             </svg>
-            <span><strong>Unlimited</strong> team members</span>
+            <span class="ml-1"><strong>Unlimited</strong> team members</span>
           </li>
-          <li class="flex items-start">
-            <svg class="w-6 h-6 mr-2 flex-shrink-0 text-[color:var(--dark-yellow)]" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+          <li class="mb-2 flex">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" fill="var(--dark-gray)" class="size-6 min-w-6">
+              <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd" />
             </svg>
-            <span><strong>Unlimited</strong> marketing lists</span>
+            <span class="ml-1"><strong>Unlimited</strong> marketing lists</span>
           </li>
-          <li class="flex items-start">
-            <svg class="w-6 h-6 mr-2 flex-shrink-0 text-[color:var(--dark-yellow)]" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+          <li class="mb-2 flex">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" fill="var(--dark-gray)" class="size-6 min-w-6">
+              <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd" />
             </svg>
-            <span><strong>Unlimited</strong> email templates</span>
+            <span class="ml-1"><strong>Unlimited</strong> email templates</span>
           </li>
-          <li class="flex items-start">
-            <svg class="w-6 h-6 mr-2 flex-shrink-0 text-[color:var(--dark-yellow)]" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+          <li class="mb-2 flex">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" fill="var(--dark-gray)" class="size-6 min-w-6">
+              <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd" />
             </svg>
-            <span><strong>Unlimited</strong> active deals</span>
+            <span class="ml-1"><strong>Unlimited</strong> active deals</span>
           </li>
-          <li class="flex items-start">
-            <svg class="w-6 h-6 mr-2 flex-shrink-0 text-[color:var(--dark-yellow)]" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+          <li class="mb-2 flex">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" fill="var(--dark-gray)" class="size-6 min-w-6">
+              <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd" />
             </svg>
-            <span><strong>100,000</strong> emails per month</span>
+            <span class="ml-1"><strong>100,000</strong> emails per month</span>
           </li>
         </ul>
 
-        <a href="/contact/" class="inline-block bg-[color:var(--dark-yellow)] text-[color:var(--dark-copy)] px-6 py-3 rounded hover:opacity-90 transition text-center">Get Started</a>
+        {{ buyButton.button('Buy the Enterprise plan', 'text-[color:var(--dark-copy)] !mb-0 !mr-0 w-full mt-3 md:self-end md:w-auto') }}
       </div>
-
     </div>
   </div>
 </section>
@@ -192,64 +195,60 @@ eleventyComputed:
 <section class="bg-[color:var(--dark-gray)]">
   <div class="container container--large">
     <h2 class="mb-8">What's included in all plans</h2>
-    <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-      <div class="text-center">
-        <div class="text-4xl mb-3">✅</div>
-        <h3 class="font-bold mb-2">All core features</h3>
-        <p>Contact management, deal pipeline, tasks, email campaigns, and team collaboration.</p>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="flex">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" fill="var(--dark-yellow)" class="size-6 min-w-6 mt-1">
+          <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd" />
+        </svg>
+        <div class="ml-3">
+          <h3 class="font-bold mb-1">All core features</h3>
+          <p>Contact management, deal pipeline, tasks, email campaigns, and team collaboration.</p>
+        </div>
       </div>
-      <div class="text-center">
-        <div class="text-4xl mb-3">🔒</div>
-        <h3 class="font-bold mb-2">Enterprise security</h3>
-        <p>Multi-tenant isolation, rate limiting, session management, and encrypted storage.</p>
+      <div class="flex">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" fill="var(--dark-yellow)" class="size-6 min-w-6 mt-1">
+          <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd" />
+        </svg>
+        <div class="ml-3">
+          <h3 class="font-bold mb-1">Enterprise security</h3>
+          <p>Multi-tenant isolation, rate limiting, session management, and encrypted storage.</p>
+        </div>
       </div>
-      <div class="text-center">
-        <div class="text-4xl mb-3">📧</div>
-        <h3 class="font-bold mb-2">Email support</h3>
-        <p>Get help when you need it. We respond to all support requests quickly.</p>
+      <div class="flex">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" fill="var(--dark-yellow)" class="size-6 min-w-6 mt-1">
+          <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd" />
+        </svg>
+        <div class="ml-3">
+          <h3 class="font-bold mb-1">Email support</h3>
+          <p>Get help when you need it. I respond to all support requests quickly.</p>
+        </div>
       </div>
-      <div class="text-center">
-        <div class="text-4xl mb-3">📊</div>
-        <h3 class="font-bold mb-2">Data export</h3>
-        <p>Your data is yours. Export contacts and information anytime you need.</p>
+      <div class="flex">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" fill="var(--dark-yellow)" class="size-6 min-w-6 mt-1">
+          <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd" />
+        </svg>
+        <div class="ml-3">
+          <h3 class="font-bold mb-1">Data export</h3>
+          <p>Your data is yours. Export contacts and information anytime you need.</p>
+        </div>
       </div>
-      <div class="text-center">
-        <div class="text-4xl mb-3">🔄</div>
-        <h3 class="font-bold mb-2">Regular updates</h3>
-        <p>New features and improvements added regularly at no extra cost.</p>
+      <div class="flex">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" fill="var(--dark-yellow)" class="size-6 min-w-6 mt-1">
+          <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd" />
+        </svg>
+        <div class="ml-3">
+          <h3 class="font-bold mb-1">Regular updates</h3>
+          <p>New features and improvements added regularly at no extra cost.</p>
+        </div>
       </div>
-      <div class="text-center">
-        <div class="text-4xl mb-3">💳</div>
-        <h3 class="font-bold mb-2">Cancel anytime</h3>
-        <p>No long-term contracts. Change or cancel your plan anytime.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="container container--large dark-copy">
-    <h2 class="mb-8 text-center">Frequently Asked Questions</h2>
-    <div class="max-w-3xl mx-auto space-y-6">
-      <div>
-        <h3 class="text-xl font-bold mb-2">Can I change plans later?</h3>
-        <p>Yes, you can upgrade or downgrade anytime. Changes take effect on your next billing cycle.</p>
-      </div>
-      <div>
-        <h3 class="text-xl font-bold mb-2">What happens if I exceed my limits?</h3>
-        <p>We'll notify you when you're approaching your limits. You can upgrade your plan or archive old data to stay within limits.</p>
-      </div>
-      <div>
-        <h3 class="text-xl font-bold mb-2">Is there a setup fee?</h3>
-        <p>No setup fees. Just pay the monthly subscription for your chosen plan.</p>
-      </div>
-      <div>
-        <h3 class="text-xl font-bold mb-2">Can I import my existing contacts?</h3>
-        <p>Yes, you can import contacts from CSV files or most other CRM systems.</p>
-      </div>
-      <div>
-        <h3 class="text-xl font-bold mb-2">Is my data secure?</h3>
-        <p>Yes. We use enterprise-grade security with encryption, multi-tenant isolation, and regular backups.</p>
+      <div class="flex">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" fill="var(--dark-yellow)" class="size-6 min-w-6 mt-1">
+          <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd" />
+        </svg>
+        <div class="ml-3">
+          <h3 class="font-bold mb-1">Cancel anytime</h3>
+          <p>No long-term contracts. Change or cancel your plan anytime.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -260,7 +259,16 @@ eleventyComputed:
     <h2 class="mb-8 text-center">Ready to get started?</h2>
     <p class="text-xl text-center mb-8">Get in touch to discuss which plan is right for your business.</p>
     <div class="text-center">
-      <a href="/contact/" class="inline-block bg-[color:var(--dark-yellow)] text-[color:var(--dark-copy)] px-8 py-4 rounded text-lg hover:opacity-90 transition">Contact Me</a>
+      {{ buyButton.button('Contact Me', 'text-[color:var(--dark-copy)]', '/contact/') }}
     </div>
+  </div>
+</section>
+
+<section>
+  <div class="container container--large">
+    <h2 class="mb-4 dark-copy">Frequently Asked Questions.</h2>
+
+    {{ faqs.faqComponent('dark-copy') }}
+
   </div>
 </section>

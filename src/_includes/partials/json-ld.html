@@ -7,7 +7,7 @@
     "url": "{{ env.site }}",
     "logo": "{{ env.site }}/android-chrome-512x512.png",
     "image": "{{ env.site }}/android-chrome-512x512.png",
-    "description": "Managed digital solutions for growing businesses. Monthly website management and CRM software to help service businesses succeed online.",
+    "description": "Managed digital solutions for growing businesses. Monthly website management and CRM software to help small businesses succeed online.",
     "telephone": "{{ settings.phoneNumber }}",
     "email": "{{ settings.email }}",
     "address": {
@@ -48,6 +48,20 @@
     {# Organisation JSON ld #}
 
     {{ organizationSchema() }}
+
+  {% elseif seoSchemaPageType == 'WebSite' %}
+
+    {# WebSite JSON ld #}
+
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": "{{ env.site }}/#website",
+      "url": "{{ env.site }}",
+      "name": "Kabooly",
+      "description": "{{ description }}",
+      "publisher": {{ organizationSchema() }}
+    }
 
   {% elseif seoSchemaPageType == 'ContactPage' %}
 
@@ -201,7 +215,7 @@
           "applicationCategory": "BusinessApplication",
           "operatingSystem": "Web Browser",
           "image": "{{ env.site }}/android-chrome-512x512.png",
-          "description": "Lightweight CRM software for service businesses. Manage contacts, track deals, send campaigns and collaborate with your team.",
+          "description": "CRM software for small businesses. Manage contacts, track deals, send campaigns and collaborate with your team.",
           "brand": {
             "@type": "Brand",
             "name": "Kabooly"

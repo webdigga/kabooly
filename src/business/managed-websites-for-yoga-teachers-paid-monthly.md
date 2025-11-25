@@ -22,4 +22,4 @@ As a Yoga Teacher, your focus should be on your practice, not on maintaining a w
 My managed website service is available for a simple, affordable monthly fee. No hidden costs, no complicated setups, just peace of mind knowing your online presence is in good hands.
 
 ## Let Me Help You Grow Your Yoga Business
-Take the stress out of managing your website. Buy a website today and get back to doing what you love—teaching Yoga!
+Take the stress out of managing your website. Buy a website today and get back to doing what you love: teaching Yoga!

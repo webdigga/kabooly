@@ -38,12 +38,12 @@
       <!--Menu-->
       <div
         data-test="menu"
-        class="w-full flex-grow lg:flex lg:items-center lg:w-auto text-center {{ bgColour | safe }} hidden"
+        class="w-full flex-grow lg:flex lg:items-center lg:w-auto text-left lg:text-center {{ bgColour | safe }} hidden"
       >
 
         {% if navigation.items %}
 
-          <ul class="pt-6 lg:pt-0 list-reset lg:flex justify-end flex-1 items-center">
+          <ul class="pt-6 lg:pt-0 pl-4 lg:pl-0 list-reset lg:flex justify-end flex-1 items-center">
             {% for item in navigation.items %}
               <li class="nav__item {% if item.children %}relative group{% endif %}">
                 {% if item.children %}
@@ -52,15 +52,15 @@
                       class="text-ml inline-block py-3 px-4 hover:underline-offset-4 hover:decoration-1 hover:underline hover:decoration-[color:var(--dark-yellow)] {% if item.url == page.url %}underline-offset-4 decoration-2 underline decoration-[color:var(--dark-yellow)] {% else %} no-underline {% endif %}"
                       href="{{ item.url }}">
                       {{ item.text }}
-                      <svg class="w-4 h-4 inline-block ml-1" fill="currentColor" viewBox="0 0 20 20">
+                      <svg class="hidden lg:inline-block w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20">
                         <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
                       </svg>
                     </a>
-                    <ul class="hidden lg:absolute lg:top-full lg:left-0 lg:bg-white lg:text-[color:var(--dark-copy)] lg:shadow-xl lg:min-w-[280px] lg:rounded-md lg:border lg:border-gray-200 lg:py-2 lg:group-hover:block">
+                    <ul class="mt-1 lg:mt-0 lg:hidden lg:absolute lg:top-full lg:right-0 lg:bg-white lg:text-[color:var(--dark-copy)] lg:shadow-xl lg:min-w-[280px] lg:rounded-md lg:border lg:border-gray-200 lg:py-2 lg:group-hover:block">
                       {% for child in item.children %}
-                        <li>
+                        <li class="pl-6 lg:pl-0">
                           <a
-                            class="block py-3 px-6 hover:bg-gray-100 {% if child.url == page.url %}bg-gray-100 font-semibold{% endif %}"
+                            class="block py-1.5 lg:py-3 px-4 lg:px-6 text-sm lg:text-base font-normal lg:font-medium underline lg:no-underline lg:hover:bg-gray-100 {% if child.url == page.url %}lg:bg-gray-100 lg:font-semibold{% endif %}"
                             href="{{ child.url }}">
                             {{ child.text }}
                           </a>

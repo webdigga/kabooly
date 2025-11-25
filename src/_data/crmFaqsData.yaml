@@ -1,0 +1,15 @@
+faqs:
+  - question: Is there a contract?
+    answer: Yes there is a contract. I will prepare this after the agreed purchase and can go over any of the details you are unsure of.
+  - question: Can I change plans later?
+    answer: Yes, you can upgrade or downgrade anytime. Changes take effect on your next billing cycle.
+  - question: What happens if I exceed my limits?
+    answer: I'll notify you when you're approaching your limits. You can upgrade your plan or archive old data to stay within limits.
+  - question: Is there a setup fee?
+    answer: No setup fees. Just pay the monthly subscription for your chosen plan.
+  - question: Can I import my existing contacts?
+    answer: Yes, you can import contacts from CSV files or most other CRM systems.
+  - question: Is my data secure?
+    answer: Yes. I use enterprise-grade security with encryption, multi-tenant isolation, and regular backups.
+  - question: Can I stop paying whenever I want?
+    answer: There is a 30 day notice period to cancel the contract.

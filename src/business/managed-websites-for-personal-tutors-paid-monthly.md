@@ -16,7 +16,7 @@ bullets:
 ---
 ## Stand Out with a Professional, Custom Website
 
-My paid monthly managed website service for Personal Tutors is designed to help you present your tutoring services in the best possible light. With a custom-designed website tailored to your subjects, testimonials, and teaching style, you'll attract more students and build trust with parents. No more dealing with complicated website platforms—I handle it all, allowing you to focus on educating your students.
+My paid monthly managed website service for Personal Tutors is designed to help you present your tutoring services in the best possible light. With a custom-designed website tailored to your subjects, testimonials, and teaching style, you'll attract more students and build trust with parents. No more dealing with complicated website platforms. I handle it all, allowing you to focus on educating your students.
 
 ## Fully Managed, So You Can Focus on Teaching
 I manage all the technical details, including hosting, updates, security, and performance, ensuring that your website is always running at its best. With my fully managed service, you don’t have to worry about maintenance, giving you more time to focus on delivering exceptional tutoring sessions and supporting your students' success.

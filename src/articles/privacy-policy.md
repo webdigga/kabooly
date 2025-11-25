@@ -1,10 +1,13 @@
 ---
 title: Privacy policy
-seoTitle: Privacy policy | Kabooly
-description: Cookie consent
+seoTitle: Privacy Policy | Kabooly
+description: Learn how Kabooly collects and uses your data. Our privacy policy explains cookie usage, Google Analytics tracking, and how we protect your information.
 author: David White
 date: 2024-02-29T17:13:10.382Z
 type: privacy
+ogType: website
+eleventyComputed:
+  canonical: "{{ env.site }}/privacy-policy/"
 tags:
   - privacy
 ---

@@ -1,15 +1,11 @@
 {% macro button(text, destination, classes, icon) %}
   <a
     href="{{ destination | safe }}"
-    class="rounded-md cursor-pointer inline-block py-4 px-6 hover:opacity-90 {{ classes | safe }}"
+    class="rounded-md cursor-pointer inline-flex items-center py-4 px-6 hover:opacity-90 border border-solid border-transparent {{ classes | safe }}"
   >
+    {{ text | safe }}
     {% if icon %}
-      <div class="flex items-center">
-        {{ text | safe }}
-        {{ icon | safe }}
-      </div>
-    {% else %}
-      {{ text | safe }}
+      {{ icon | safe }}
     {% endif %}
   </a>
 {% endmacro %}

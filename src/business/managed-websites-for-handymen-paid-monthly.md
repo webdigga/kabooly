@@ -16,7 +16,7 @@ bullets:
 ---
 ## Stand Out with a Professional, Custom Website
 
-My paid monthly managed website service for Handymen is designed to elevate your business with a professional online presence. A custom-built website tailored to your services will help you showcase your skills, attract more clients, and build trust. No need to waste time with complicated website builders—let me handle everything while you focus on doing what you do best: providing top-notch Handyman services.
+My paid monthly managed website service for Handymen is designed to elevate your business with a professional online presence. A custom-built website tailored to your services will help you showcase your skills, attract more clients, and build trust. No need to waste time with complicated website builders. Let me handle everything while you focus on doing what you do best: providing top-notch Handyman services.
 
 ## Fully Managed, So You Can Focus on the Job
 I take care of everything, from hosting to updates, security, and ongoing performance improvements, so your website is always in top shape. With my fully managed service, you won’t need to worry about the tech side of things. I keep your website running smoothly, leaving you free to concentrate on the jobs that keep your business growing.

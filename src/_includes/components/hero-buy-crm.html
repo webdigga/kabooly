@@ -1,0 +1,27 @@
+{% import "./checklist-item.html" as checkList with context %}
+{% import "./buttons/buy-a-crm.html" as buyButton with context %}
+{% import "./buttons/call-me.html" as callButton with context %}
+
+<div class="flex flex-col md:flex-row items-center py-8 lg:py-16">
+  <div>
+    <h1>Buy a CRM - <span class="text-[color:var(--light-yellow)]">Managed CRM Solutions</span></h1>
+    <h2>Simple CRM Built for Small Businesses</h2>
+
+    {{ buyButton.button('Buy a CRM', 'text-[color:var(--dark-copy)]') }}
+
+    {{ callButton.button('Call me', 'bg-[color:var(--dark-gray)]', 'hover:bg-[color:var(--dark-purple)]') }}
+
+    <ul class="flex flex-col sm:flex-row flex-wrap max-w-screen-md">
+      {{ checkList.checkListItem(title='Easy Setup', classes='text-white sm:w-1/2 mb-2', textColour='text-white') }}
+      {{ checkList.checkListItem(title='Contact Management', classes='text-white sm:w-1/2 mb-2', textColour='text-white') }}
+      {{ checkList.checkListItem(title='Deal Pipeline', classes='text-white sm:w-1/2 mb-2', textColour='text-white') }}
+      {{ checkList.checkListItem(title='Email Campaigns', classes='text-white sm:w-1/2 mb-2', textColour='text-white') }}
+      {{ checkList.checkListItem(title='Team Collaboration', classes='text-white sm:w-1/2 mb-2', textColour='text-white') }}
+      {{ checkList.checkListItem(title='Ongoing Support', classes='text-white sm:w-1/2 mb-2', textColour='text-white') }}
+    </ul>
+
+  </div>
+
+  {% include "./rocket.html" %}
+
+</div>

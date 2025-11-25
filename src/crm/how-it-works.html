@@ -3,8 +3,8 @@ layout: default
 path: crmHowItWorks
 type: crmHowItWorks
 ogType: website
-seoTitle: How Kabooly CRM Works | Simple Setup for Service Businesses
-description: Get started with Kabooly CRM in 4 simple steps. Quick setup, data import, team onboarding, and ongoing support for service businesses.
+seoTitle: How Kabooly CRM Works | Simple Setup for Small Businesses
+description: Get started with Kabooly CRM in 4 simple steps. Quick setup, data import, team onboarding, and ongoing support for small businesses.
 seoSchemaPageType: FAQPage
 eleventyComputed:
   canonical: "{{ env.site }}/crm/how-it-works/"
@@ -12,22 +12,16 @@ eleventyComputed:
 
 {% import "../_includes/partials/navbar.html" as navBar with context %}
 {% import "../_includes/components/buttons/more-button.html" as moreButton with context %}
-{% import "../_includes/components/buttons/buy-a-website.html" as buyButton with context %}
+{% import "../_includes/components/buttons/buy-a-crm.html" as buyButton with context %}
 {% import "../_includes/components/buttons/secondary-button.html" as secondaryButton with context %}
+{% import "../_includes/components/crm-faqs.html" as faqs with context %}
 
 <section class="min-h-dvh flex flex-col bg-[color:var(--dark-purple)] justify-between border-b-4 border-b-[color:var(--dark-yellow)] border-solid">
 
   {{ navBar.nav('bg-[color:var(--dark-purple)]') }}
 
   <div class="container content-center">
-    <div class="flex flex-col md:flex-row items-center py-8 lg:py-16">
-      <div>
-        <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6">Getting started is simple</h1>
-        <p class="text-xl sm:text-2xl mb-8 max-w-3xl">From sign-up to managing your first contacts in under an hour. No complicated setup, no training required.</p>
-      </div>
-
-      {% include "../_includes/components/rocket.html" %}
-    </div>
+    {% include "../_includes/components/hero-crm-how-it-works.html" %}
   </div>
 
   {{ moreButton.button('bg-[color:var(--dark-yellow)]', 'border-[color:var(--dark-yellow)]', 'text-[color:var(--dark-copy)]') }}
@@ -87,7 +81,7 @@ eleventyComputed:
     <div class="grid md:grid-cols-2 gap-8">
       <div>
         <h3 class="text-2xl font-bold mb-3">No bloat</h3>
-        <p class="text-lg">Built specifically for service businesses. No complicated features you'll never use. Just the essentials done really well.</p>
+        <p class="text-lg">Built specifically for small businesses. No complicated features you'll never use. Just the essentials done really well.</p>
       </div>
       <div>
         <h3 class="text-2xl font-bold mb-3">Fast and modern</h3>
@@ -137,13 +131,22 @@ eleventyComputed:
   </div>
 </section>
 
-<section class="bg-white border-t-4 border-[color:var(--dark-yellow)]">
-  <div class="container container--large dark-copy">
+<section class="bg-[color:var(--dark-gray)]">
+  <div class="container container--large">
     <h2 class="mb-8">Ready to see it in action?</h2>
     <p class="text-xl mb-8 max-w-3xl">Get in touch to discuss your needs and see if Kabooly CRM is right for your business.</p>
     <div class="flex">
       {{ buyButton.button('Contact Me', 'text-[color:var(--dark-copy)]', '/contact/') }}
       {{ secondaryButton.button('View Pricing', '/crm/pricing/') }}
     </div>
+  </div>
+</section>
+
+<section>
+  <div class="container container--large">
+    <h2 class="mb-4 dark-copy">Frequently Asked Questions.</h2>
+
+    {{ faqs.faqComponent('dark-copy') }}
+
   </div>
 </section>

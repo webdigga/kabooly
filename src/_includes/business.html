@@ -1,8 +1,9 @@
 ---
 layout: default
-seoSchemaPageType: WebSite
+seoSchemaPageType: Product
+ogType: website
 eleventyComputed:
-  canonical: "{{ env.site }}/{{ seoTitle | slugify }}/"
+  canonical: "{{ env.site }}{{ page.url }}"
 ---
 
 {% import "./partials/navbar.html" as navBar with context %}
@@ -45,7 +46,7 @@ eleventyComputed:
             />
           </svg>
           <div class="ml-4">
-            <strong>Personalised Support</strong><span>: Unlike Wix, Squarespace, or GoDaddy, I provide a truly personal service—updates and changes are just an email away.</span>
+            <strong>Personalised Support</strong><span>: Unlike Wix, Squarespace, or GoDaddy, I provide a truly personal service. Updates and changes are just an email away.</span>
           </div>
         </li>
 
@@ -85,7 +86,7 @@ eleventyComputed:
           
           
           <div class="ml-4">
-            <strong>No DIY Required</strong><span>: Forget spending hours trying to build or maintain your site. With Kabooly, there's no learning curve—just professional, done-for-you service.</span>
+            <strong>No DIY Required</strong><span>: Forget spending hours trying to build or maintain your site. With Kabooly, there's no learning curve. Just professional, done-for-you service.</span>
           </div>
         </li>
 

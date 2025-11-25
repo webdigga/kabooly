@@ -1,24 +1,25 @@
 ---
 layout: default
-path: contact
-type: contact
+path: buy-a-crm
+type: buyACrm
 ogType: website
-seoTitle: Contact Me | Kabooly
-description: Get in touch with Kabooly for managed websites or CRM enquiries. I'm here to help your small business succeed online.
-seoSchemaPageType: ContactPage
+seoTitle: Buy a CRM - Managed CRM Solutions | Kabooly.com
+description: Get a professionally managed CRM for your business. Fill out our form to enquire about our CRM services at Kabooly.com and start today!
+seoSchemaPageType: WebSite
 eleventyComputed:
-  canonical: "{{ env.site }}/contact/"
+  canonical: "{{ env.site }}/buy-a-crm/"
 ---
 
 {% import "./_includes/partials/navbar.html" as navBar with context %}
 {% import "./_includes/components/buttons/more-button.html" as moreButton with context %}
+{% import "./_includes/components/crm-faqs.html" as faqs with context %}
 
 <section class="min-h-dvh flex flex-col bg-[color:var(--dark-gray)] justify-between border-b-4 border-b-[color:var(--light-yellow)] border-solid">
 
   {{ navBar.nav('bg-[color:var(--dark-gray)]') }}
-  
+
   <div class="container content-center">
-    {% include "./_includes/components/hero-contact.html" %}
+    {% include "./_includes/components/hero-buy-crm.html" %}
   </div>
 
   {{ moreButton.button('bg-[color:var(--light-yellow)]', 'border-[color:var(--light-yellow)]', 'text-[color:var(--dark-copy)]') }}
@@ -26,7 +27,7 @@ eleventyComputed:
 
 <section data-test="moreButtonLocation" id="contact">
   <div class="container container--large">
-    {% include "./_includes/components/contact-form.html" %}
+    {% include "./_includes/components/buy-crm-form.html" %}
   </div>
 </section>
 
@@ -42,7 +43,10 @@ eleventyComputed:
 </section>
 
 <section>
-  <div class="container container--large dark-copy">
-    {% include "./_includes/components/choose-your-solution.html" %}
+  <div class="container container--large">
+    <h2 class="mb-4 dark-copy">Frequently Asked Questions.</h2>
+
+    {{ faqs.faqComponent('dark-copy') }}
+
   </div>
 </section>

@@ -16,7 +16,7 @@ bullets:
 ---
 ## Stand Out with a Professional, Custom Website
 
-My paid monthly managed website service for Coaches is designed to enhance your coaching business with a professional, high-quality online presence. With a custom-built website tailored to your coaching style, client testimonials, and services, you’ll attract more clients and establish yourself as a trusted expert. Forget the hassle of DIY website builders—I take care of everything, so you can focus on empowering your clients.
+My paid monthly managed website service for Coaches is designed to enhance your coaching business with a professional, high-quality online presence. With a custom-built website tailored to your coaching style, client testimonials, and services, you’ll attract more clients and establish yourself as a trusted expert. Forget the hassle of DIY website builders. I take care of everything, so you can focus on empowering your clients.
 
 ## Fully Managed, So You Can Focus on Coaching
 I handle all the technical aspects of your website, from hosting and updates to security and performance optimisation. My fully managed service ensures your website is always running smoothly, giving you more time to focus on coaching your clients and growing your business. Let me handle the tech, so you can concentrate on making an impact.

@@ -1,0 +1,16 @@
+{% import "./faq-item.html" as faqItem with context %}
+
+{% macro faqComponent(textColour) %}
+  <div class="mt-6 border-t-4 border-[color:var(--light-gray)] pt-10">
+    <div class="grid grid-cols-1 md:grid-cols-2 md:gap-x-8 md:gap-y-12">
+
+      {% if crmFaqsData.faqs %}
+        {% for faqsDataItem in crmFaqsData.faqs %}
+          {{ faqItem.faq(faqsDataItem.question, faqsDataItem.answer, textColour) }}
+        {% endfor %}
+
+      {% endif %}
+
+    </div>
+  </div>
+{% endmacro %}
