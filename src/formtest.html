@@ -1,0 +1,78 @@
+---
+layout: default
+path: home
+type: home
+ogType: website
+description: Managed digital solutions for growing businesses. Monthly website management and CRM software to help small businesses succeed online.
+seoTitle: Managed Digital Solutions, Paid Monthly | Kabooly
+seoSchemaPageType: Organization
+eleventyComputed:
+  canonical: "{{ env.site }}/"
+ignore: true
+---
+
+{% import "./_includes/partials/navbar.html" as navBar with context %}
+{% import "./_includes/components/buttons/more-button.html" as moreButton with context %}
+{% import "./_includes/components/buttons/buy-a-website.html" as buyButton with context %}
+
+<section class="min-h-dvh flex flex-col bg-[color:var(--dark-blue)] justify-between border-b-4 border-b-[color:var(--dark-yellow)] border-solid">
+
+  {{ navBar.nav('bg-[color:var(--dark-blue)]') }}
+
+  <div class="container content-center">
+    {% include "./_includes/components/hero-home.html" %}
+  </div>
+
+  {{ moreButton.button('bg-[color:var(--dark-yellow)]', 'border-[color:var(--dark-yellow)]', 'text-[color:var(--dark-copy)]') }}
+</section>
+
+<section data-test="moreButtonLocation">
+  <div class="container container--large dark-copy">
+    {% include "./_includes/components/choose-your-solution.html" %}
+  </div>
+</section>
+
+<section>
+  <div class="container dark-copy">
+    <div id="kabooly-form-1"></div>
+<script>
+(function() {
+  var form = document.getElementById('kabooly-form-1');
+  var iframe = document.createElement('iframe');
+  iframe.src = 'http://localhost:5173/embed/form/1';
+  iframe.style.width = '100%';
+  iframe.style.border = 'none';
+  iframe.style.minHeight = '400px';
+  iframe.onload = function() {
+    // Auto-resize iframe based on content
+    window.addEventListener('message', function(e) {
+      if (e.data.formId === '1' && e.data.height) {
+        iframe.style.height = e.data.height + 'px';
+      }
+    });
+  };
+  form.appendChild(iframe);
+})();
+</script>
+  </div>
+</section>
+
+<section class="bg-[color:var(--dark-purple)]">
+  <div class="container container--large">
+    <h2 class="mb-4">About Me - Digital Solutions Provider in Kingston Upon Thames</h2>
+    <div class="mb-4"><a href="/contact/#contact" class="anchor-highlight">Click here to contact me</a></div>
+
+    {% include "./_includes/components/about-me.html" %}
+
+  </div>
+</section>
+
+<section>
+  <div class="container container--large dark-copy">
+    <h2 class="mb-4 text-center">Ready to Get Started?</h2>
+    <p class="text-xl text-center mb-8">Get in touch to discuss which solution is right for your business.</p>
+    <div class="text-center">
+      {{ buyButton.button('Contact Me', 'text-[color:var(--dark-copy)]', '/contact/') }}
+    </div>
+  </div>
+</section>
