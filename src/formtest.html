@@ -39,7 +39,20 @@ ignore: true
 (function() {
   var form = document.getElementById('kabooly-form-1');
   var iframe = document.createElement('iframe');
-  iframe.src = 'http://localhost:5173/embed/form/1';
+
+  // Build iframe URL with theme and UTM parameters from parent page
+  var baseUrl = 'http://localhost:5173/embed/form/1';
+  var params = [];
+  
+
+  // Forward UTM parameters from parent page URL to iframe
+  var urlParams = new URLSearchParams(window.location.search);
+  ['utm_source', 'utm_campaign', 'utm_medium', 'utm_content', 'utm_term'].forEach(function(param) {
+    var value = urlParams.get(param);
+    if (value) params.push(param + '=' + encodeURIComponent(value));
+  });
+
+  iframe.src = baseUrl + (params.length ? '?' + params.join('&') : '');
   iframe.style.width = '100%';
   iframe.style.border = 'none';
   iframe.style.minHeight = '400px';
