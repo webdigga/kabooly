@@ -1,0 +1,14 @@
+{% import "./checklist-item.html" as checkList with context %}
+
+<ul class="sm:grid sm:grid-cols-2">
+  {{ checkList.checkListItem(title='Contact Management', classes='text-[color:var(--dark-yellow)] mb-3', textColour='text-white') }}
+  {{ checkList.checkListItem(title='Deal Pipeline', classes='text-[color:var(--dark-yellow)] mb-3', textColour='text-white') }}
+  {{ checkList.checkListItem(title='Email Campaigns', classes='text-[color:var(--dark-yellow)] mb-3', textColour='text-white') }}
+  {{ checkList.checkListItem(title='Tasks & Activities', classes='text-[color:var(--dark-yellow)] mb-3', textColour='text-white') }}
+  {{ checkList.checkListItem(title='Team Collaboration', classes='text-[color:var(--dark-yellow)] mb-3', textColour='text-white') }}
+  {{ checkList.checkListItem(title='Custom Tags', classes='text-[color:var(--dark-yellow)] mb-3', textColour='text-white') }}
+  {{ checkList.checkListItem(title='Enterprise Security', classes='text-[color:var(--dark-yellow)] mb-3', textColour='text-white') }}
+  {{ checkList.checkListItem(title='Email Support', classes='text-[color:var(--dark-yellow)] mb-3', textColour='text-white') }}
+  {{ checkList.checkListItem(title='Data Export', classes='text-[color:var(--dark-yellow)] mb-3', textColour='text-white') }}
+  {{ checkList.checkListItem(title='Regular Updates', classes='text-[color:var(--dark-yellow)] mb-3', textColour='text-white') }}
+</ul>

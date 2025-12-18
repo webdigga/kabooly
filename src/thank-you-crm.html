@@ -10,6 +10,7 @@ eleventyComputed:
 
 {% import "./_includes/partials/navbar.html" as navBar with context %}
 {% import "./_includes/components/crm-faqs.html" as crmFaqs with context %}
+{% import "./_includes/components/crm-what-you-get.html" as crmWhatYouGet with context %}
 
 <div class="bg-[color:var(--dark-gray)]">
   {{ navBar.nav('bg-[color:var(--dark-gray)]') }}
@@ -25,6 +26,18 @@ eleventyComputed:
   <p class="my-4 dark-copy">I'll be reviewing your information and will get back to you shortly to discuss the next steps.</p>
   <p class="my-4 dark-copy">In the meantime, check out further information below!</p>
 </div>
+
+<section class="bg-[color:var(--dark-gray)]">
+
+  <div class="container container--large">
+    <div class="mb-4">
+      <h2 class="inline-block mb-0">What you get.</h2>
+    </div>
+
+    {% include "./_includes/components/crm-what-you-get.html" %}
+
+  </div>
+</section>
 
 <section>
   <div class="container container--large">
