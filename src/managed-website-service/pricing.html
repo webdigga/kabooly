@@ -11,12 +11,14 @@ eleventyComputed:
 ---
 
 {% import "../_includes/partials/navbar.html" as navBar with context %}
+{% import "../_includes/partials/breadcrumbs.html" as breadcrumbNav with context %}
 {% import "../_includes/components/buttons/more-button.html" as moreButton with context %}
 {% import "../_includes/components/faqs.html" as faqs with context %}
 
 <section class="min-h-dvh flex flex-col bg-[color:var(--dark-copy)] justify-between border-b-4 border-b-[color:var(--light-yellow)] border-solid">
 
   {{ navBar.nav('bg-[color:var(--dark-copy)]') }}
+  {{ breadcrumbNav.breadcrumbs([{text: 'Managed Website Service', url: '/managed-website-service/'}, {text: 'Pricing', url: '/managed-website-service/pricing/'}]) }}
 
   <div class="container content-center">
     {% include "../_includes/components/hero-pricing.html" %}

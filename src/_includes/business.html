@@ -7,6 +7,7 @@ eleventyComputed:
 ---
 
 {% import "./partials/navbar.html" as navBar with context %}
+{% import "./partials/breadcrumbs.html" as breadcrumbNav with context %}
 {% import "./components/faqs.html" as faqs with context %}
 {% import "./components/buttons/more-button.html" as moreButton with context %}
 {% import "./components/hero-small-business.html" as hero with context %}
@@ -14,6 +15,7 @@ eleventyComputed:
 <section class="min-h-dvh flex flex-col bg-[color:var(--teal)] justify-between border-b-4 border-b-[color:var(--dark-yellow)] border-solid">
 
   {{ navBar.nav('bg-[color:var(--teal)]') }}
+  {{ breadcrumbNav.breadcrumbs([{text: 'Managed Website Service', url: '/managed-website-service/'}, {text: seoTitle, url: page.url}]) }}
   
   <div class="container content-center">
     {{ hero.smallBusiness(title, title2, title3, h2Tag, bullets[0], bullets[1], bullets[2], bullets[3], bullets[4], bullets[5]) }}

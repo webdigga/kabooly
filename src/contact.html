@@ -11,11 +11,13 @@ eleventyComputed:
 ---
 
 {% import "./_includes/partials/navbar.html" as navBar with context %}
+{% import "./_includes/partials/breadcrumbs.html" as breadcrumbNav with context %}
 {% import "./_includes/components/buttons/more-button.html" as moreButton with context %}
 
 <section class="min-h-dvh flex flex-col bg-[color:var(--dark-gray)] justify-between border-b-4 border-b-[color:var(--light-yellow)] border-solid">
 
   {{ navBar.nav('bg-[color:var(--dark-gray)]') }}
+  {{ breadcrumbNav.breadcrumbs([{text: 'Contact', url: '/contact/'}]) }}
   
   <div class="container content-center">
     {% include "./_includes/components/hero-contact.html" %}

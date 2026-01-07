@@ -11,12 +11,14 @@ eleventyComputed:
 ---
 
 {% import "../_includes/partials/navbar.html" as navBar with context %}
+{% import "../_includes/partials/breadcrumbs.html" as breadcrumbNav with context %}
 {% import "../_includes/components/buttons/more-button.html" as moreButton with context %}
 {% import "../_includes/components/faqs.html" as faqs with context %}
 
 <section class="min-h-dvh flex flex-col bg-[color:var(--dark-blue)] justify-between border-b-4 border-b-[color:var(--dark-yellow)] border-solid">
 
   {{ navBar.nav('bg-[color:var(--dark-blue)]') }}
+  {{ breadcrumbNav.breadcrumbs([{text: 'Managed Website Service', url: '/managed-website-service/'}]) }}
 
   <div class="container content-center">
     {% include "../_includes/components/hero.html" %}
@@ -30,6 +32,48 @@ eleventyComputed:
     <h2 class="mb-4">Helping Small Businesses Stay Focused While I Handle the Website</h2>
 
     {% include "../_includes/components/small-business.html" %}
+  </div>
+</section>
+
+<section class="bg-[color:var(--dark-gray)]">
+  <div class="container container--large">
+    <h2 class="mb-4">Managed Websites for Your Industry</h2>
+    <p class="mb-6">I create tailored websites for professionals across many industries. Find out how a managed website can help your specific business:</p>
+    <ul class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <li>
+        <a class="hover:opacity-70 underline" href="/managed-websites-for-chiropodists-paid-monthly/">Chiropodists</a>
+      </li>
+      <li>
+        <a class="hover:opacity-70 underline" href="/managed-websites-for-coaches-paid-monthly/">Coaches</a>
+      </li>
+      <li>
+        <a class="hover:opacity-70 underline" href="/managed-websites-for-dentists-paid-monthly/">Dentists</a>
+      </li>
+      <li>
+        <a class="hover:opacity-70 underline" href="/managed-websites-for-handymen-paid-monthly/">Handymen</a>
+      </li>
+      <li>
+        <a class="hover:opacity-70 underline" href="/managed-websites-for-landscape-gardeners-paid-monthly/">Landscape Gardeners</a>
+      </li>
+      <li>
+        <a class="hover:opacity-70 underline" href="/managed-websites-for-nursery-managers-paid-monthly/">Nursery Managers</a>
+      </li>
+      <li>
+        <a class="hover:opacity-70 underline" href="/managed-websites-for-personal-trainers-paid-monthly/">Personal Trainers</a>
+      </li>
+      <li>
+        <a class="hover:opacity-70 underline" href="/managed-websites-for-personal-tutors-paid-monthly/">Personal Tutors</a>
+      </li>
+      <li>
+        <a class="hover:opacity-70 underline" href="/managed-websites-for-small-business-paid-monthly/">Small Businesses</a>
+      </li>
+      <li>
+        <a class="hover:opacity-70 underline" href="/managed-websites-for-wedding-planners-paid-monthly/">Wedding Planners</a>
+      </li>
+      <li>
+        <a class="hover:opacity-70 underline" href="/managed-websites-for-yoga-teachers-paid-monthly/">Yoga Teachers</a>
+      </li>
+    </ul>
   </div>
 </section>
 
