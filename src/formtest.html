@@ -34,16 +34,16 @@ ignore: true
 
 <section>
   <div class="container dark-copy">
-    <div id="kabooly-form-1"></div>
+    <div id="kabooly-form-2"></div>
 <script>
 (function() {
-  var form = document.getElementById('kabooly-form-1');
+  var form = document.getElementById('kabooly-form-2');
   var iframe = document.createElement('iframe');
 
   // Build iframe URL with theme and UTM parameters from parent page
-  var baseUrl = 'https://crm.kabooly.com/embed/form/1';
+  var baseUrl = 'https://crm.kabooly.com/embed/form/2';
   var params = [];
-  
+
 
   // Forward UTM parameters from parent page URL to iframe
   var urlParams = new URLSearchParams(window.location.search);
@@ -59,7 +59,7 @@ ignore: true
   iframe.onload = function() {
     // Auto-resize iframe based on content
     window.addEventListener('message', function(e) {
-      if (e.data.formId === '1' && e.data.height) {
+      if (e.data.formId === '2' && e.data.height) {
         iframe.style.height = e.data.height + 'px';
       }
     });
