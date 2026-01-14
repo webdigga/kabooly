@@ -80,6 +80,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("./src/favicon.svg");
   eleventyConfig.addPassthroughCopy("./src/web-app-manifest-192x192.png");
   eleventyConfig.addPassthroughCopy("./src/web-app-manifest-512x512.png");
+  eleventyConfig.addPassthroughCopy("./src/kabooly-social-share.png");
   
 
   // // Minify HTML
